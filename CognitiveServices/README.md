@@ -1,5 +1,5 @@
 # Microsoft Cognitive Services
-Pour ce mini-hack, je vous propose d'utiliser Microsoft Cognitive Services, et plus précisemment l'API Computer Vision pour récupérer la légende d'une image à partir d'une URL.
+Pour ce mini-hack, je vous propose d'utiliser Microsoft Cognitive Services, et plus précisément l'API Computer Vision pour récupérer la légende d'une image à partir d'une URL.
 
 ## Prérequis
 - Visual Studio 2015
@@ -38,7 +38,7 @@ Quelques secondes plus tard, votre service sera créé et vous pourrez y accéde
 En vous rendant sur le [portail Cognitive Services](https://www.microsoft.com/cognitive-services/en-us/subscriptions), vous avez la possibilité de demander des clés d'APIs, utilisables pour de l'évaluation seulement (pas de production).
 Le processus est assez simple :
 - Connectez-vous avec un compte Microsoft (ex Live-Id)
-- Cliquez sur Request new trials
+- Cliquez sur "Request new trials"
 - Sélectionnez les APIs qui vous intéressent (Computer Vision dans notre cas)
 - Validez les conditions d'utilisation
 - Cliquez sur le bouton d'abonnements
@@ -54,7 +54,7 @@ Maintenant que vous avez accès à une clé d'API Computer Vision, il est temps 
 Dans Visual Studio 2015, créez un nouveau projet de type Console, utilisation .NET Framework (et non .NET Core).
 
 La première chose que doit faire l'application est de récupérer de l'utilisateur une chaîne de caractères représentant l'URL vers une photo sur internet.  
-Ecrivez le code nécessarie pour cela, en vous inspirant pourquoi pas de l'exemple ci-dessous, qui utilise une boucle infinie et valide l'entrée de l'utilisateur avant de poursuivre :
+Ecrivez le code nécessaire pour cela, en vous inspirant pourquoi pas de l'exemple ci-dessous, qui utilise une boucle infinie et valide l'entrée de l'utilisateur avant de poursuivre :
 
 ```csharp
 static void Main(string[] args)

@@ -145,3 +145,10 @@ Si vous n'avez pas d'inspiration, voici quelques photos que vous pouvez utiliser
 - https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Cat_on_a_macbook.JPG/1920px-Cat_on_a_macbook.JPG
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
+
+## Pour aller plus loin
+
+Ces parties sont optionnelles dans le cadre du mini-hack, mais voici quelques idées pour aller plus loin :
+
+- Utiliser l'API [Microsoft Translator](https://www.microsoft.com/en-us/translator/default.aspx) pour traduire le résultat en français.
+- Utiliser un modèle plus évolué qu'une application Console, comme une application Web, UWP ou pourquoi pas un Bot !

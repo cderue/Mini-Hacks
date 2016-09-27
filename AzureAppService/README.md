@@ -2,13 +2,13 @@
 Pour ce mini-hack, je vous propose d'utiliser Microsoft Azure App Service pour déployer une application PHP Symfony3.
 Ce tutoriel se déroule en 5 phases :
 
-0. L'installation des prérequis nécessaires
-1. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
-2. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
-3. L'ajout d'une base de données MySQL à une application web Azure avec [Azure App Service MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/)
-4. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
+1. La vérification des prérequis nécessaires
+2. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
+3. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
+4. L'ajout d'une base de données MySQL à une application web Azure avec [Azure App Service MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/)
+5. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
 
-## 0) Prérequis
+## 1) Prérequis
 - L'un des éditeurs de code avancé suivant : 
     - [Visual Studio Code](https://code.visualstudio.com)
     - [Atom](https://atom.io/)
@@ -19,28 +19,34 @@ Ce tutoriel se déroule en 5 phases :
     - [PHP 5.6](https://secure.php.net/downloads.php#v5.6.26)
     - [PHP 7.0](https://secure.php.net/downloads.php#v7.0.11)
 
-## 1) Création d'une nouvelle application web avec Azure App Service
+## 2) Création d'une nouvelle application web avec Azure App Service
 
-Pour créer une nouvelle application web depuis le [portail Azure](https://portal.azure.com) avec Azure App Service :
+### 2.1) Quelques mots sur Azure App Service
 
-    - Cliquez sur Nouveau > Web + mobile > Application web
+Azure App Service est un service de plateforme ou Paas (Platform as a Service) qui permet de créer des applications web et mobiles dans le cloud Azure.
+
+### 2.2) Créer une nouvelle application web avec Azure App Service
+
+Pour créer une nouvelle application web depuis le [portail Azure](https://portal.azure.com) :
+
+- Cliquez sur Nouveau > Web + mobile > Application web
 
 ![Portail Azure App Service](Screenshots/AzureWebApp1.png)
 
-    - Complétez ensuite les premières informations nécessaires :
-        - Nom de l'application : à vous de choisir
-        - Abonnement Azure (dans le cas où vous auriez plusieurs abonnements Azure)
-        - Groupe de ressources : un nouveau groupe de ressource pour le mini-hack sera parfait
+- Complétez ensuite les premières informations nécessaires :
+    - Nom de l'application : à vous de choisir
+    - Abonnement Azure (dans le cas où vous auriez plusieurs abonnements Azure)
+    - Groupe de ressources : un nouveau groupe de ressource pour le mini-hack sera parfait
         
 ![Portail Azure App Service](Screenshots/AzureWebApp3.png)       
-        
-    - Créez un plan Azure App Service pour l'application web :
-        - Cliquez sur [+] Créer nouveau
-        - Saisissez le nom du plan App Service
-        - Sélectionnez un emplacement : pour ce mini-hack, sélectionnez l'Europe occidentale (West Europe)
-        - Cliquez sur Niveau de tarification puis cliquez sur Afficher tout pour afficher davantage d'options de tarification, telles que Gratuit et Partagé
-        - Sélectionnez le niveau de tarification F1 (gratuit) pour le service  puis cliquez sur Sélectionner
-        - Valider l'ensemble en cliquant sur OK
+
+- Créez un [plan Azure App Service](https://azure.microsoft.com/fr-fr/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) pour l'application web :
+    - Cliquez sur [+] Créer nouveau
+    - Saisissez le nom du plan App Service
+    - Sélectionnez un emplacement : pour ce mini-hack, sélectionnez l'Europe occidentale (West Europe)
+    - Cliquez sur Niveau de tarification puis cliquez sur Afficher tout pour afficher davantage d'options de tarification, telles que Gratuit et Partagé
+    - Sélectionnez le niveau de tarification F1 (gratuit) pour le service  puis cliquez sur Sélectionner
+    - Valider l'ensemble en cliquant sur OK
 
 ![Portail Azure App Service](Screenshots/AzureWebApp4.png)        
  

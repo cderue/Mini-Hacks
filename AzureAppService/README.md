@@ -59,7 +59,7 @@ La navigateur affiche une page par défault indiquant que l'application web a é
 
 ![Portail Azure App Service](Screenshots/AzureWebApp9.png)
 
-## Phase 2 : Création d'une application PHP Symfony3 sur le poste de travail
+## 2) Création d'une application PHP Symfony3 sur le poste de travail
 
 C'est désormais le moment de créer une nouvelle application PHP Symfony3 en local depuis le terminal de votre système d'exploitation.
 
@@ -100,8 +100,6 @@ Pour ce faire, suivez les instructions indiquées dans le terminal comme le mont
 Le navigateur affiche alors la page montrée dans la figure ci-dessous :
 
 ![Symfony](Screenshots/Symfony2.png)
-
-## Phase 3 : Déploiement d'une application Symfony3 sur Microsoft Azure
 
 Pour déployer une application web avec Microsoft Azure App Service, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
 pour configurer la souce de déploiement :
@@ -162,7 +160,7 @@ $ git push azure master
 
 
 
-## Phase 4 : Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
+## 3) Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
 
 MySQL in-app (Preview) feature enables running MySql natively on Azure App Service platform.You don’t need to provision a database explicitly as during the creation of the web app when using this feature,  we take care of enabling it if you select “MySQL in-app(Preview)” during creation or if the feature is turned ON for existing web app. To understand what MySQL in-app means , I have highlighted core functionality supported with the preview release of the feature:
 
@@ -196,7 +194,7 @@ Une fois le déploiement terminé, accédez à l'URL du fichier depuis un naviga
 
 Vous pouvez maintenant commencer à utiliser la fonctionnalité de gestion des tâches de l'application. Les tâches créées seront stockées dans la base de données MySQL.
 
-## Générer une notification de déploiement avec Azure Functions
+## 4) Générer une notification de déploiement avec Azure Functions
 
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !

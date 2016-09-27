@@ -2,13 +2,13 @@
 Pour ce mini-hack, je vous propose d'utiliser Microsoft Azure App Service pour déployer une application PHP Symfony3.
 Ce tutoriel se déroule en 5 phases :
 
-1. La création d'une nouvelle application web avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
-2. La création d'une nouvelle application Symfony3 sur le poste de travail
-3. Le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
-4. L'ajout d'une base de données MySQL à une application web Azure avec [Azure App Service MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/)
-5. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
+0. L'installation des pré-requis nécessaires
+1. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
+2. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
+3. L'ajout d'une base de données MySQL à une application web Azure avec [Azure App Service MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/)
+4. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
 
-## Prérequis
+## 0) Prérequis
 - L'un des éditeurs de code avancé suivant : 
     - [Visual Studio Code](https://code.visualstudio.com)
     - [Atom](https://atom.io/)
@@ -19,7 +19,7 @@ Ce tutoriel se déroule en 5 phases :
     - [PHP 5.6](https://secure.php.net/downloads.php#v5.6.26)
     - [PHP 7.0](https://secure.php.net/downloads.php#v7.0.11)
 
-## Phase 1 : Création d'une nouvelle application web avec Microsoft Azure App Service
+## 1) Création d'une nouvelle application web avec Azure App Service
 
 Pour créer une nouvelle application web depuis le [portail Azure](https://portal.azure.com) avec Azure App Service :
 

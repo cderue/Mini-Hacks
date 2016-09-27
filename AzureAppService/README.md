@@ -50,41 +50,51 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 
 ![Portail Azure App Service](Screenshots/AzureWebApp4.png)        
  
-    - Renseignez enfin les dernières informations nécessaires :
-        - App Insights : laisser désactivé cette fonctionnalité qui n'est pas dans le périmètre de ce mini-hack
-        - Epingler au tableau de bord : conseillé pour accéder plus facilement à votre service
-        - Cliquez sur le bouton Créer pour lancer la création de l'appplication web
+- Renseignez enfin les dernières informations nécessaires :
+    - App Insights : laisser désactivé cette fonctionnalité qui n'est pas dans le périmètre de ce mini-hack
+    - Epingler au tableau de bord : conseillé pour accéder plus facilement à votre service
+    - Cliquez sur le bouton Créer pour lancer la création de l'appplication web
      
 ![Portail Azure App Service](Screenshots/AzureWebApp5.png)
 
-Quelques secondes plus tard, votre application web sera créé et vous pourrez y accéder en cliquant que le lien indiqué dans la figure ci-dessous :
+*Une fois la création terminée, le portail Azure affiche une vue d'ensemble de l'application web.*
+
+- Cliquez sur le lien vers l'URL de l'application web
 
 ![Portail Azure App Service](Screenshots/AzureWebApp8.png)
 
-La navigateur affiche une page par défault indiquant que l'application web a été créée avec succès comme le montre la figure suivante :
+*Le navigateur affiche une page par défault indiquant que l'application web a été créée avec succès.*
 
 ![Portail Azure App Service](Screenshots/AzureWebApp9.png)
 
-## 2) Création d'une application PHP Symfony3 sur le poste de travail
+## 3) Création et déploiement d'une application PHP Symfony3 sur le poste de travail
 
-C'est désormais le moment de créer une nouvelle application PHP Symfony3 en local depuis le terminal de votre système d'exploitation.
+## 3.1) Quelques mots sur Symfony3
 
-Pour se faire, nous allons utiliser un programme d'installation dédié nommé Symfony Installer.
-Les deux prochaines sous-sections montrent comment récupérer le programme Symfony Installer respectivement sous Mac OS X (ou Linux) et Windows.
+Symfony3 est la dernière version du framework Symfony de SensioLabs. 
+Ce framework permet de créer des applications PHP allant du simple blog aux grandes applications critiques d'entreprise.
+Symfony permet de programmer avec une approche orientée composant en permettant ainsi au développeur d'utiliser toute ou partie du framework dans la construction d'une application.
 
-### Sous Mac OS X ou Linux
+## 3.2) Créer une nouvelle application Symfony3
+
+### 3.2.1 ) Installer Symfony Installer
+
+Pour ce faire, nous allons utiliser un programme d'installation dédié nommé __Symfony Installer__.
+Les deux prochaines sous-sections montrent comment récupérer le programme __Symfony Installer__ respectivement sous Mac OS X (ou Linux) et Windows.
+
+#### 3.2.1.1) InstallationSous Mac OS X ou Linux
 
 ```bash
 $ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 $ sudo chmod a+x /usr/local/bin/symfony
 ```
 
-### Sous Windows
+#### 3.2.1.2) Installation Sous Windows
 ```bash
 c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
 ```
 
-    - Ajoutez le fichier symfony dans la variable d'environnement PATH pour pouvoir appeler ce programme depuis n'importe quel répertoire.
+- Ajoutez le fichier __symfony__ dans la variable d'environnement __PATH__ pour pouvoir appeler ce programme depuis n'importe quel répertoire.
 
 Pour créez un nouveau projet Symfony3, suivez les étapes ci-dessous :
 

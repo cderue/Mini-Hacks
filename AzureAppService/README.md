@@ -121,7 +121,7 @@ Le navigateur affiche alors la page montrée dans la figure ci-dessous :
 
 ### 3.3) Déployer une application Symfony sur Azure
 
-Pour déployer une application web avec Microsoft Azure App Service, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
+Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
 pour configurer la souce de déploiement :
     - Rendez-vous sur le [portail Azure](http://portal.azure.com)
     - Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)

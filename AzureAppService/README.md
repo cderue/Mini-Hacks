@@ -80,33 +80,30 @@ Symfony permet de programmer avec une approche orientée composant en permettant
 ### 3.2.1) Installer Symfony Installer
 
 Pour ce faire, nous allons utiliser un programme d'installation dédié nommé __Symfony Installer__.
-Les deux prochaines sous-sections montrent comment récupérer le programme __Symfony Installer__ respectivement sous Mac OS X (ou Linux) et Windows.
 
-#### 3.2.1.1) Sous Mac OS X ou Linux
+- Pour installer __Symfony Installer__, suivez les instructions ci-dessous en fonction de votre système d'exploitation :
 
 ```bash
+# Sous Mac OS X ou Linux
 $ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 $ sudo chmod a+x /usr/local/bin/symfony
-```
 
-#### 3.2.1.2) Sous Windows
-```bash
+# Sous Windows
 c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
 ```
 
+Note pour les utilsateurs sous Windows :
 - Ajoutez le fichier __symfony__ dans la variable d'environnement __PATH__ pour pouvoir appeler ce programme depuis n'importe quel répertoire.
 
 ### 3.2.2) Démarrer un nouveau projet d'application Symfony
 
-Les deux prochaines sous-sections montrent comment démarrer un nouveau projet d'application Symfony respectivement sous Mac OS X (ou Linux) et Windows.
+- Pour démarer un nouveau projet d'application Symfony, suivez les instructions ci-dessous en fonction de votre système d'exploitation :
 
-#### 3.2.2.1) Sous Mac OS X ou Linux
 ```bash
+# Sous Mac OS X ou Linux
 $ symfony new <my_project_name>
-```
 
-#### 3.2.2.2) Sous Windows
-```bash
+# Sous Windows
 $ php symfony new <my_project_name>
 ```
 

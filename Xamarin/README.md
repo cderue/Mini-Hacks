@@ -19,6 +19,10 @@ Pour cela :
 2. Sélectionnez le projet de démarrage et le device de déploiement
 3. Démarrez le projet
 
+![Twitter apps](/Xamarin/README_FILES/snip_20160928154306.png)
+
+![Twitter apps](/Xamarin/README_FILES/snip_20160928154348.png)
+
 ## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :
 
@@ -39,8 +43,11 @@ Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154001.png)
 
+![Twitter apps](/Xamarin/README_FILES/snip_20160928153735.png)
 
+![Twitter apps](/Xamarin/README_FILES/snip_20160928153821.png)
 
+![Twitter apps](/Xamarin/README_FILES/snip_20160928153906.png)
 
 ## Ajoutez vos credentials Twitter à l'application
 L'application a besoin de ces identifiants pour questionner l'API Twitter : 
@@ -48,9 +55,14 @@ L'application a besoin de ces identifiants pour questionner l'API Twitter :
 1. Dans **TwitterClient**, ouvrez **TwitterCredentials.cs**
 2. Renseignez vos informations récupérées aux étapes précédentes.
 
+![Twitter apps](/Xamarin/README_FILES/snip_20160928155009.png)
+
 Vous noterez l'appel dans **App.xaml.cs > OnStart()** de **TwitterApi.Instance.SetCredentials()** au démarrage de l'application.
 
 ## Utilisez la DLL TwitterAPI.dll
+
+![Twitter apps](/Xamarin/README_FILES/snip_20160928154947.png)
+
 Afin de simplifier cet exercice nous avons préparé cette DLL qui permet 3 types de requetes Twitter :
 
 - **Rechercher des utilisateurs** *TwitterAPI.SearchUserAsync()*
@@ -78,6 +90,9 @@ List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserA
 ## Ajouter la vue de son application -> MainPage
 Si vous observez **MainPage.xaml** vous remarquerez que nous avons déjà changé *ContentPage* en *TabbedPage* pour vous. 
 *(You're welcome ;) )*
+
+![Twitter apps](/Xamarin/README_FILES/snip_20160928162052.png)
+
 L'objectif est donc de faire une application qui permet :
 
 - Dans le paneau **"Search"** de rechercher des tweets

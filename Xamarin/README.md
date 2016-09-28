@@ -96,7 +96,7 @@ Si vous observez **MainPage.xaml** vous remarquerez que nous avons déjà chang�
 L'objectif est donc de faire une application qui permet :
 
 - Dans le paneau **"Search"** de rechercher des tweets
-- Dans le paneau **"User"** de techercher des utilisateurs
+- Dans le paneau **"User"** de rechercher des utilisateurs
 
 ### Search
 ##### XAML -> MainPage.xaml

@@ -236,10 +236,10 @@ Les tâches créées sont désormais stockées dans la base de données MySQL.
 
 ## 4) Générer une notification de déploiement avec Azure Functions
 
-Ici l’objectif est simple, mettre en place un micro-service qui doit pouvoir être utilisable par plusieurs applications de façon transparente !
-Pour cela, il est d’usage d’utiliser un service de « messagerie ». Dans Azure on distingue deux services de messagerie, Azure Storage Queue et Azure Services Bus. Les différences entre ces deux services sont expliquées ici. Dans notre cas nous allons utiliser une Azure Storage Queue, pour la simple et bonne raison que par défaut un compte de stockage est créé avec une Azure Fonction, nous allons donc utiliser ce compte de stockage pour y créer une queue.
-L’idée est de mettre en place l’architecture suivante (sans développer les applications web et mobiles qui sont présentes sur le schéma à titre d’exemple !)
+### 4.1) Quelques mots sur Azure Functions
 
+Il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
+Pour ce faire, nous allons utiliser Azure Functions.
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 

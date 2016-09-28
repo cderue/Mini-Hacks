@@ -11,7 +11,7 @@ Pour ce challenge vous aurez besoin de soit :
 - Visual Studio 2015 (Avec les outils Xamarin installés et à jour)
 - Xamarin Studio
 
-### Récupérer et ouvrir la solution
+## Récupérer et ouvrir la solution
 Pour bien commencer, il faut s'assurer que la solution de départ se lance correctement dans votre environnement. 
 Pour cela :
 
@@ -19,7 +19,7 @@ Pour cela :
 2. Sélectionnez le projet de démarrage et le device de déploiement
 3. Démarrez le projet
 
-### Créer une app Twitter et récupérer ses credentials OAuth
+## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :
 
 1. Aller sur [**https://apps.twitter.com/**](https://apps.twitter.com/)
@@ -31,7 +31,7 @@ Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès
 7. Plus bas dans la page, dans **Your access token**, cliquez sur **Create my access token**
 8. Copiez-coller également les **Access Token**  et **Access Token Secret**
 
-### Ajoutez vos credentials Twitter à l'application
+## Ajoutez vos credentials Twitter à l'application
 L'application a besoin de ces identifiants pour questionner l'API Twitter : 
 
 1. Dans **TwitterClient**, ouvrez **TwitterCredentials.cs**
@@ -39,7 +39,7 @@ L'application a besoin de ces identifiants pour questionner l'API Twitter :
 
 Vous noterez l'appel dans **App.xaml.cs > OnStart()** de **TwitterApi.Instance.SetCredentials()** au démarrage de l'application.
 
-### Utilisez la DLL TwitterAPI.dll
+## Utilisez la DLL TwitterAPI.dll
 Afin de simplifier cet exercice nous avons préparé cette DLL qui permet 3 types de requetes Twitter :
 
 - **Rechercher des utilisateurs** *TwitterAPI.SearchUserAsync()*
@@ -64,7 +64,7 @@ List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserA
 - [**TWITTER : GET search/tweets**](https://dev.twitter.com/rest/reference/get/search/tweets)
 - [**TWITTER :GET users/search**](https://dev.twitter.com/rest/reference/get/users/search)
 
-### Ajouter la vue de son application -> MainPage
+## Ajouter la vue de son application -> MainPage
 Si vous observez **MainPage.xaml** vous remarquerez que nous avons déjà changé *ContentPage* en *TabbedPage* pour vous. 
 *(You're welcome ;) )*
 L'objectif est donc de faire une application qui permet :
@@ -72,7 +72,7 @@ L'objectif est donc de faire une application qui permet :
 - Dans le paneau **"Search"** de rechercher des tweets
 - Dans le paneau **"User"** de techercher des utilisateurs
 
-#### Search
+### Search
 ##### XAML -> MainPage.xaml
 Ajoutez à l'intérieur du *ContentPage* **"Search"** :
 ```xaml
@@ -116,7 +116,7 @@ Nous avons mis dans notre XAML des événements. *SearchButtonPressed* et *Refre
 ```
 *(On vous laisse remplir ;) )*
 
-#### Users
+### Users
 ##### XAML -> MainPage.xaml
 Ajoutez à l'intérieur du *ContentPage* **"User"** :
 ```xaml

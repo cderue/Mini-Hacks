@@ -176,19 +176,22 @@ $ git commit -m "Déploiement de l'application PHP Symfony3"
 $ git push azure master
 ```
 
+Le déploiement dure quelques minutes puisquu'il faut notamment récupérer toutes les dépendances du projet gérées par Composer sur le réseau.
+Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.
 
-
-
+![Symfony](Screenshots/Symfony1.png)
 
 ## 3) Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
 
-MySQL in-app (Preview) feature enables running MySql natively on Azure App Service platform.You don’t need to provision a database explicitly as during the creation of the web app when using this feature,  we take care of enabling it if you select “MySQL in-app(Preview)” during creation or if the feature is turned ON for existing web app. To understand what MySQL in-app means , I have highlighted core functionality supported with the preview release of the feature:
+### 3.1) Quelques mots sur MySQL In App
 
-Support PHP , MYSQL applications like WordPress, Joomla , Drupal etc .
-MySQL server running on the same instance side by side with your web server hosting the site. This will boost performance of your application
-Storage is shared between both MySQL and your web app files. Note with Free and Shared plans you may hit our quota limits when using the site based on the actions you perform . Check out quota limitations for Free and Shared plans.
-You can turn on Slow query logging and general logging for MySQL . Note that this can impact the site performance and should NOT always be turned ON . The logging feature will help investigation any application issues .
-Go to your web app and select MySQL in-app(Preview) in the Menu blade on the right. You can use the setting here to manage your MySQL in-app feature , turn on logging , access PHPmyadmin etc.
+MySQL in-app est une nouvelle fonctionnalité (en preview pour l'instant) conçue por permettre l'exécution d'une base de données MySQL sur une instance Azure App Service.
+Cette fonctionnalité permet au développeur qui a besoin d'une base de données clé en main de gagner du temps.
+MySQL in-app n'est pas prévu pour être utilisé en production.
+
+### 3.2) Activer MySQL In App
+ 
+- Cliquez sur MySQL in-app(Preview)
 - Activez MySQL In App
 - Désactivez le journal des requêtes lentes MySQL (désactivé par défaut)
 - Désactivez le journal général MySQL (désactivé par défaut)
@@ -210,11 +213,32 @@ La base de données créée par Azure se nomme azuredb commme le montre la figur
 Les répertoire Sources de ce min-hack contient un fichier nommé get_mysql_connection.php et qui permet de récupérer l'identifiant utilisateur et le mot de passe.
 Copiez le fichier get_mysql_connection.php à la racine du projet d'application Symfony3 et déployer l'application comme cela à été vu dans la phase 3.
 N'oubliez donc pas de faire le commit du fichier et de pousser ce commit vers le dépôt Git distant sur Azure.
-Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe
+Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
 
-Vous pouvez maintenant commencer à utiliser la fonctionnalité de gestion des tâches de l'application. Les tâches créées seront stockées dans la base de données MySQL.
+![MySQL In App](Screenshots/phpMyAdmin1.png)
+
+### Configurer la connexion à MySQL dans une application Symfony
+
+```bash
+# app/config/parameters.yml
+parameters:
+    database_host:      <>
+    database_name:      azuredb
+    database_user:      root
+    database_password:  password
+
+# ... 
+```
+
+Modifiez le fichier __get_mysql_connection.php__ avec  la racine du projet d'application Symfony3 et déployer de nouveau l'application.
+Une fois le déploiement terminé, vous pouvez commencer à utiliser la fonctionnalité de gestion des tâches de l'application. 
+Les tâches créées sont désormais stockées dans la base de données MySQL.
 
 ## 4) Générer une notification de déploiement avec Azure Functions
+
+Ici l’objectif est simple, mettre en place un micro-service qui doit pouvoir être utilisable par plusieurs applications de façon transparente !
+Pour cela, il est d’usage d’utiliser un service de « messagerie ». Dans Azure on distingue deux services de messagerie, Azure Storage Queue et Azure Services Bus. Les différences entre ces deux services sont expliquées ici. Dans notre cas nous allons utiliser une Azure Storage Queue, pour la simple et bonne raison que par défaut un compte de stockage est créé avec une Azure Fonction, nous allons donc utiliser ce compte de stockage pour y créer une queue.
+L’idée est de mettre en place l’architecture suivante (sans développer les applications web et mobiles qui sont présentes sur le schéma à titre d’exemple !)
 
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !

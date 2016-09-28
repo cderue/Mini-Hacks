@@ -123,12 +123,12 @@ Le navigateur affiche alors la page montrée dans la figure ci-dessous :
 
 Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
 pour configurer la souce de déploiement :
-    - Rendez-vous sur le [portail Azure](http://portal.azure.com)
-    - Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
-    - Dans la section Déploiement des applications, cliquez sur Options de déploiement
-    - Cliquez sur Choisir la source
-    - Sélectionnez Référentiel Git local
-    - Cliquez sur OK pour valider le choix de la source de déploiement
+- Rendez-vous sur le [portail Azure](http://portal.azure.com)
+- Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
+- Dans la section Déploiement des applications, cliquez sur Options de déploiement
+- Cliquez sur Choisir la source
+- Sélectionnez Référentiel Git local
+- Cliquez sur OK pour valider le choix de la source de déploiement
     
 ![Symfony](Screenshots/AzureWebAppDeployment1.png)
 

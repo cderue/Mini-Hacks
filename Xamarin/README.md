@@ -193,18 +193,19 @@ Comme indiqué, le XCode détecté sur le Mac de déploiement n'est pas à jour.
 - Mettre à jour XCode sur ce Mac
 - Dans Solution iOS > Paramètres > iOS Build > Linker behavior sélectionner "Link SDK Assemblies Only"
 
-
-![Twitter apps](/Xamarin/README_FILES/snip_20160928184108.png)
 > Tout le code de ma solution Android est rouge.
 
 Il s'agit d'un bug connu lorsqu'on utilise VS et Xamarin. Fermez Visual Studio, aller jusqu'à la racine de votre projet et supprimez le dossier /.vs . Relancez VS et votre Android est compris.
+
+![Twitter apps](/Xamarin/README_FILES/snip_20160928184108.png)
 
 > "Resource.Layout.Tabbar" et "Resource.Layout.Toolbar" ne sont pas trouvés
 
 Android a besoin d'une première compilation avant de pouvoir développer. Générez votre projet Android.
 
-![Twitter apps](/Xamarin/README_FILES/snip_20160928184033.png)
 > Tout le code (y compris le XAML) est rouge.
 
 Vous avez surement oublié de récupérer les pacquets NuGets. Rendez-vous dans Outils/Tools > Gestionnaire de packages NuGet/Nuget packages manager > Gérer les packages NuGet pour la solution .../Manage Nuget packages for solution ... et cliquez sur le bandeau jaune qui apparait.
+
+![Twitter apps](/Xamarin/README_FILES/snip_20160928184033.png)
 

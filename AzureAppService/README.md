@@ -100,12 +100,12 @@ c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com
 
 Les deux prochaines sous-sections montrent comment démarrer un nouveau projet d'application Symfony respectivement sous Mac OS X (ou Linux) et Windows.
 
-### 3.2.2) Sous Mac OS X ou Linux
+### 3.2.2.1) Sous Mac OS X ou Linux
 ```bash
 $ symfony new <my_project_name>
 ```
 
-### 3.2.2) Sous Windows
+### 3.2.2.2) Sous Windows
 ```bash
 $ php symfony new <my_project_name>
 ```

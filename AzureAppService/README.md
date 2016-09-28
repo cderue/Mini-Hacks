@@ -67,7 +67,7 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 
 ![Portail Azure App Service](Screenshots/AzureWebApp9.png)
 
-## 3) Création et déploiement d'une application PHP Symfony3 sur le poste de travail
+## 3) Création et déploiement d'une application PHP Symfony3
 
 ## 3.1) Quelques mots sur Symfony3
 
@@ -77,33 +77,35 @@ Symfony permet de programmer avec une approche orientée composant en permettant
 
 ## 3.2) Créer une nouvelle application Symfony3
 
-### 3.2.1 ) Installer Symfony Installer
+### 3.2.1) Installer Symfony Installer
 
 Pour ce faire, nous allons utiliser un programme d'installation dédié nommé __Symfony Installer__.
 Les deux prochaines sous-sections montrent comment récupérer le programme __Symfony Installer__ respectivement sous Mac OS X (ou Linux) et Windows.
 
-#### 3.2.1.1) InstallationSous Mac OS X ou Linux
+#### 3.2.1.1) Sous Mac OS X ou Linux
 
 ```bash
 $ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 $ sudo chmod a+x /usr/local/bin/symfony
 ```
 
-#### 3.2.1.2) Installation Sous Windows
+#### 3.2.1.2) Sous Windows
 ```bash
 c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
 ```
 
 - Ajoutez le fichier __symfony__ dans la variable d'environnement __PATH__ pour pouvoir appeler ce programme depuis n'importe quel répertoire.
 
-Pour créez un nouveau projet Symfony3, suivez les étapes ci-dessous :
+### 3.2.2) Démarrer un nouveau projet d'application Symfony
 
-### Sous Mac OS X ou Linux
+Les deux prochaines sous-sections montrent comment démarrer un nouveau projet d'application Symfony respectivement sous Mac OS X (ou Linux) et Windows.
+
+### 3.2.2) Sous Mac OS X ou Linux
 ```bash
 $ symfony new <my_project_name>
 ```
 
-### Sous Windows
+### 3.2.2) Sous Windows
 ```bash
 $ php symfony new <my_project_name>
 ```
@@ -116,6 +118,8 @@ Pour ce faire, suivez les instructions indiquées dans le terminal comme le mont
 Le navigateur affiche alors la page montrée dans la figure ci-dessous :
 
 ![Symfony](Screenshots/Symfony2.png)
+
+### 3.3) Déployer une application Symfony sur Azure
 
 Pour déployer une application web avec Microsoft Azure App Service, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
 pour configurer la souce de déploiement :

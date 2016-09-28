@@ -44,9 +44,9 @@ Afin de simplifier cet exercice nous avons préparé cette DLL qui permet 3 type
 
 - **Rechercher des utilisateurs** *TwitterAPI.SearchUserAsync()*
 - **Rechercher des tweets** *TwitterAPI.SearchTweetsAsync(ResultType)*
-- - **Rechercher les tweets récents** *TwitterAPI.ResultType.Recent*
-- - **Rechercher les tweets populaires** *TwitterAPI.ResultType.Popular*
-- - **Rechercher un mélange des 2** *TwitterAPI.ResultType.Mixed*
+ - **Rechercher les tweets récents** *TwitterAPI.ResultType.Recent*
+ - **Rechercher les tweets populaires** *TwitterAPI.ResultType.Popular*
+ - **Rechercher un mélange des 2** *TwitterAPI.ResultType.Mixed*
 - **Rechercher les tweets d'un utilisateur** *TwitterAPI.SearchTweetsOfUserAsync()*
 
 Vous pouvez alors utiliser :
@@ -152,9 +152,9 @@ Idem dans votre **MainPage.xaml.cs** :
 Pour la suite :
 
 - Customisez votre application à fond !
-- - Icone d'application
-- - Couleurs & Fonds
-- - Informations affichées dans les listes
+ - Icone d'application
+ - Couleurs & Fonds
+ - Informations affichées dans les listes
 - Faites la même chose en Xamarin.Android et Xamarin.iOS
 - Au clic sur un utilisateur, naviguez vers une page affichant les informations de l'utilisateur et ses derniers tweets.
 ###### Documentation

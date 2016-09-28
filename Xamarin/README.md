@@ -95,8 +95,8 @@ Si vous observez **MainPage.xaml** vous remarquerez que nous avons déjà chang�
 
 L'objectif est donc de faire une application qui permet :
 
-- Dans le paneau **"Search"** de rechercher des tweets
-- Dans le paneau **"User"** de rechercher des utilisateurs
+- Dans le panneau **"Search"** de rechercher des tweets
+- Dans le panneau **"User"** de rechercher des utilisateurs
 
 ### Search
 ##### XAML -> MainPage.xaml
@@ -187,7 +187,17 @@ Pour la suite :
 - [**Hierarchical navigation**](https://developer.xamarin.com/guides/xamarin-forms/user-interface/navigation/hierarchical/)
 
 ### FAQ
-> This version of Xamarin.iOS requires the iOS 10.0 SDK (shipped with Xcode 8.0) when the managed linker is disabled. Either upgrade Xcode, or enable the managed linker.
+> "This version of Xamarin.iOS requires the iOS 10.0 SDK (shipped with Xcode 8.0) when the managed linker is disabled. Either upgrade Xcode, or enable the managed linker."
 Comme indiqué, le XCode détecté sur le Mac de déploiement n'est pas à jour. 2 solutions possibles :
 - Mettre à jour XCode sur ce Mac
 - Dans Solution iOS > Paramètres > iOS Build > Linker behavior sélectionner "Link SDK Assemblies Only"
+
+> Tout le code de ma solution Android est rouge.
+Il s'agit d'un bug connu lorsqu'on utilise VS et Xamarin. Fermez Visual Studio, aller jusqu'à la racine de votre projet et supprimez le dossier /.vs . Relancez VS et votre Android est compris.
+
+> "Resource.Layout.Tabbar" et "Resource.Layout.Toolbar" ne sont pas trouvés
+Android a besoin d'une première compilation avant de pouvoir développer. Générez votre projet Android.
+
+> Tout le code (y compris le XAML) est rouge.
+Vous avez surement oublié de récupérer les pacquets NuGets. Rendez-vous dans Outils/Tools > Gestionnaire de packages NuGet/Nuget packages manager > Gérer les packages NuGet pour la solution .../Manage Nuget packages for solution ... et cliquez sur le bandeau jaune qui apparait.
+

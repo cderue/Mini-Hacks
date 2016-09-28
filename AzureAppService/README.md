@@ -69,15 +69,15 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 
 ## 3) Création et déploiement d'une application PHP Symfony3
 
-## 3.1) Quelques mots sur Symfony3
+### 3.1) Quelques mots sur Symfony3
 
 Symfony3 est la dernière version du framework Symfony de SensioLabs. 
 Ce framework permet de créer des applications PHP allant du simple blog aux grandes applications critiques d'entreprise.
 Symfony permet de programmer avec une approche orientée composant en permettant ainsi au développeur d'utiliser toute ou partie du framework dans la construction d'une application.
 
-## 3.2) Créer une nouvelle application Symfony3
+### 3.2) Créer une nouvelle application Symfony3
 
-### 3.2.1) Installer Symfony Installer
+#### 3.2.1) Installer Symfony Installer
 
 Pour ce faire, nous allons utiliser un programme d'installation dédié nommé __Symfony Installer__.
 
@@ -95,7 +95,7 @@ c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com
 Note pour les utilsateurs sous Windows :
 - Ajoutez le fichier __symfony__ dans la variable d'environnement __PATH__ pour pouvoir appeler ce programme depuis n'importe quel répertoire.
 
-### 3.2.2) Démarrer un nouveau projet d'application Symfony
+#### 3.2.2) Démarrer un nouveau projet d'application Symfony
 
 - Pour démarer un nouveau projet d'application Symfony, suivez les instructions ci-dessous en fonction de votre système d'exploitation :
 

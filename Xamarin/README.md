@@ -26,12 +26,12 @@ Pour cela :
 ## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :
 
-1. Aller sur [**https://apps.twitter.com/**](https://apps.twitter.com/)
+1. Allez sur [**https://apps.twitter.com/**](https://apps.twitter.com/)
 2. Cliquez sur **"Create New App"**
-3. Renseigner le **nom** de votre application, sa **description** et un **website** *(ce champ n'est pas important)*
+3. Renseignez le **nom** de votre application, sa **description** et un **website** *(ce champ n'est pas important)*
 4. Vous arrivez sur la page de **gestion de votre App Twitter**.
 5. Rendez-vous dans **Keys and Access Tokens**
-6. Dans **Application Settings** copiez-coller sur votre bloc note favori les **Consumer Key (API Key)** et **Consumer Secret (API Secret)**
+6. Dans **Application Settings** copiez-collez sur votre bloc note favori les **Consumer Key (API Key)** et **Consumer Secret (API Secret)**
 7. Plus bas dans la page, dans **Your access token**, cliquez sur **Create my access token**
 8. Copiez-coller également les **Access Token**  et **Access Token Secret**
 
@@ -136,7 +136,7 @@ Nous avons mis dans notre XAML des événements. *SearchButtonPressed* et *Refre
         private async void RefreshSearch(object sender, EventArgs e)
         {
             TweetsList.IsRefreshing = true;
-            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Textet les ajouter à UsersList.ItemsSource
+            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Text et les ajouter à UsersList.ItemsSource
             TweetsList.IsRefreshing = false;
         }
 ```

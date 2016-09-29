@@ -70,6 +70,17 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 
 ![Portail Azure App Service](Screenshots/AzureWebApp9.png)
 
+### 2.3) Configurer la version de PHP
+
+Azure App Service permet de paramétrer la version de PHP utilisée pour l'exécution d'une application PHP.
+Nous allons maintenant paramétrer l'application web Azure pour qu'elle utilise la PHP en version 7.
+
+- Dans la section Paramètres, cliquez sur Paramètres de l'application
+- Sélectionnez la version 7 de PHP
+- Cliquez sur Enregistrer pour valider les modifications
+
+![Portail Azure App Service](Screenshots/PHP7.png)   
+
 ## 3) Création et déploiement d'une application PHP Symfony3
 
 ### 3.1) Quelques mots sur Symfony3
@@ -183,7 +194,7 @@ $ git push azure master
 *Le déploiement dure quelques minutes.*
 *Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.*
 
-![Symfony](Screenshots/Symfony1.png)
+![Symfony](Screenshots/SymfonyAzure.png)
 
 ## 3) Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
 
@@ -217,7 +228,9 @@ $ git commit -m "Déploiement du fichier get_mysql_connection.php"
 $ git push azure master
 ```
 
-Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
+- Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
+
+
 
 ### 3.4) Ouvrir phpMyAdmin
 

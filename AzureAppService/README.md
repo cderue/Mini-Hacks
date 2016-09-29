@@ -156,7 +156,7 @@ Ce fichier permet de définir les règles de réécriture des URL comme vous le 
 Ces règles sont nécessaires pour que l'application se comporte correctement lors de la navigation.
 
 *Le fichier .deployment :*
-Ce fichier permet de scripter le déploiement de l'application. Le nom du fichier est important pour que le déploiement fonctionne (n'oubliez paz le point devant le nom).
+Ce fichier écrit en shell permet de scripter le déploiement de l'application. Le nom du fichier est important pour que le déploiement fonctionne (n'oubliez paz le point devant le nom).
 Son utilisation n'est pas systématique lorsque l'on déploie des application web avec Azure App Service.
 Néanmoins, pour une application qui utilise le programme composer pour installer les dépendances du projet d'application, le fichier .deployment est obligatoire.
 Le fichier .deployment 
@@ -197,7 +197,22 @@ Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azu
 - Désactivez le journal général MySQL (désactivé par défaut)
 - Cliquez sur Enregistrer pour enregistrer les paramètres MySQL In App
 
-### 3.2) Ouvrir phpMyAdmin
+### 3.2) Obtenir l'identifiant utilisateur et le mot de passe MySQL In App
+
+Le répertoire Sources de ce min-hack contient un fichier nommé __get_mysql_connection.php__ et qui permet de récupérer l'identifiant utilisateur et le mot de passe.
+
+- Copiez le fichier __get_mysql_connection.php__ à la racine du projet d'application Symfony3
+- Déployer l'application en exécutant les commandes suivantes depuis un terminal :
+
+```bash
+$ git add get_mysql_connection.php
+$ git commit -m "Déploiement du fichier get_mysql_connection.php" 
+$ git push azure master
+```
+
+Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
+
+### 3.4) Ouvrir phpMyAdmin
 
 - Cliquez sur Gérer pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :
 
@@ -213,10 +228,7 @@ A cet instant précis, nous ne connaissons pas l'identifiant utilisateur et le m
 
 La base de données créée par Azure se nomme __azuredb__ commme le montre la figure ci-dessous :
 
-Les répertoire Sources de ce min-hack contient un fichier nommé get_mysql_connection.php et qui permet de récupérer l'identifiant utilisateur et le mot de passe.
-Copiez le fichier get_mysql_connection.php à la racine du projet d'application Symfony3 et déployer l'application comme cela à été vu dans la phase 3.
-N'oubliez donc pas de faire le commit du fichier et de pousser ce commit vers le dépôt Git distant sur Azure.
-Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
+
 
 ![MySQL In App](Screenshots/phpMyAdmin1.png)
 

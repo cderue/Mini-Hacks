@@ -15,6 +15,9 @@ Ce tutoriel se déroule en 5 phases :
     - [Sublime Text](https://www.sublimetext.com/)
 - Un compte Microsoft Azure :
     - [Microsoft Azure](https://azure.microsoft.com/fr-fr/free/)
+- Git :
+    - [Git pour Windows](https://git-scm.com/download/win)
+    - [Git pour Mac OS X ou Linux](https://git-scm.com/book/fr/v1/D%C3%A9marrage-rapide-Installation-de-Git)
 - Une distribution récente de PHP 5 ou 7 :
     - [PHP 5.6](https://secure.php.net/downloads.php#v5.6.26)
     - [PHP 7.0](https://secure.php.net/downloads.php#v7.0.11)
@@ -107,18 +110,19 @@ $ symfony new <my_project_name>
 $ php symfony new <my_project_name>
 ```
 
-Après quelques secondes, la nouvelle application Symfony est prête pour être exécutée en local.
-Pour ce faire, suivez les instructions indiquées dans le terminal comme le montre la figure ci-dessous (ignorez la configuration du fichier parameters.yml) :
+*Après quelques secondes, la nouvelle application Symfony est prête pour être exécutée en local comme le montre la figure suivante :*
 
 ![Symfony](Screenshots/Symfony1.png)
 
-Le navigateur affiche alors la page montrée dans la figure ci-dessous :
+Pour ce faire, suivez les instructions indiquées dans le terminal comme le montre la figure ci-dessous (ignorez la configuration du fichier parameters.yml) :
+
+*Le navigateur affiche alors la page montrée dans la figure ci-dessous :*
 
 ![Symfony](Screenshots/Symfony2.png)
 
-### 3.3) Déployer une application Symfony sur Azure
+### 3.3) Configurer le déploiement d'une application web sur Azure
 
-Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans la phase 1 
+Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans le paragraphe 2.2. 
 pour configurer la souce de déploiement :
 - Rendez-vous sur le [portail Azure](http://portal.azure.com)
 - Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
@@ -129,7 +133,7 @@ pour configurer la souce de déploiement :
     
 ![Symfony](Screenshots/AzureWebAppDeployment1.png)
 
-L'application web dispose désormais d'un URL de clonage Git accessible depuis la vue d'ensemble de l'application comme le montre la figure suivante :
+*L'application web dispose désormais d'un URL de clonage Git accessible depuis la vue d'ensemble de l'application comme le montre la figure suivante :*
 
 ![Symfony](Screenshots/AzureWebAppDeployment3.png)
 
@@ -142,39 +146,35 @@ Si vous n'avez jamais déployé d'application web Azure à partir d'un référen
         
 ![Symfony](Screenshots/AzureWebAppDeployment2.png)
 
-Maintenant que la source de déploiement est entièrement configurée, il est temps de déployer l'application PHP Symfony3 créée dans la phase 2. 
-Pour y parvenir, il est nécessaire d'initier un dépôt Git local au niveau du projet d'application Symfony puis d'ajouter le référentiel distant instancié sur Azure.
-  d'ajouter au projet d'application Symfony3 deux fichiers 
-Ces deux fichiers sont fournis directement dans le répertoire Sources du mini-hack.  
+### 3.4) Déployer une application Symfony sur Azure
 
-Ensuite, nous allons ajouté deux fichiers nommés web.config et .deployment au projet d'application. 
+Maintenant que la source de déploiement est entièrement configurée, il est temps de déployer l'application PHP Symfony3 créée dans le paragraphe 3.2.
+Juste avant cela, intéressons nous aux deux fichiers nommés __web.config__ et __.deployment__ contenus dans le répertoire __Sources__ du mini-hack.
 
-### Le fichier web .config 
-Ce fichier permet de définir les règles de réécriture des URL comme vous le feriez habituellement dans un fichier .htaccess. Ces règles sont nécessaires 
+*Le fichier web .config :*
+Ce fichier permet de définir les règles de réécriture des URL comme vous le feriez habituellement dans un fichier .htaccess. 
+Ces règles sont nécessaires pour que l'application se comporte correctement lors de la navigation.
 
-### Le fichier .deployment
+*Le fichier .deployment :*
 Ce fichier permet de scripter le déploiement de l'application. Le nom du fichier est important pour que le déploiement fonctionne (n'oubliez paz le point devant le nom).
 Son utilisation n'est pas systématique lorsque l'on déploie des application web avec Azure App Service.
 Néanmoins, pour une application qui utilise le programme composer pour installer les dépendances du projet d'application, le fichier .deployment est obligatoire.
 Le fichier .deployment 
 
+Pour procéder au déploiement de l'application :
+- Copiez les fichiers __web.config__ et __.deployment__ à la racine du projet d'application Symfony
+- Exécutez les commande suivantes depuis un terminal :
 
-- Copiez les fichiers web.config et .deployment à la racine du projet d'application Symfony3
-- Exécutez la commande suivante depuis un terminal :
 ```bash
+$ git init
+$ git remote add azure <url_de_clonage_git_de>
 $ git add .
-```
-- Exécutez la commande suivante depuis un terminal :
-```bash
-$ git commit -m "Déploiement de l'application PHP Symfony3"
-```
-- Exécutez la commande suivante depuis un terminal :
-```bash
+$ git commit -m "Déploiement de l'application PHP Symfony3" 
 $ git push azure master
 ```
 
-Le déploiement dure quelques minutes puisquu'il faut notamment récupérer toutes les dépendances du projet gérées par Composer sur le réseau.
-Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.
+*Le déploiement dure quelques minutes.*
+*Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.*
 
 ![Symfony](Screenshots/Symfony1.png)
 
@@ -187,12 +187,18 @@ Cette fonctionnalité permet au développeur qui a besoin d'une base de données
 MySQL in-app n'est pas prévu pour être utilisé en production.
 
 ### 3.2) Activer MySQL In App
- 
+
+Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azure :
+- Rendez-vous sur le [portail Azure](http://portal.azure.com)
+- Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
 - Cliquez sur MySQL in-app(Preview)
 - Activez MySQL In App
 - Désactivez le journal des requêtes lentes MySQL (désactivé par défaut)
 - Désactivez le journal général MySQL (désactivé par défaut)
 - Cliquez sur Enregistrer pour enregistrer les paramètres MySQL In App
+
+### 3.2) Ouvrir phpMyAdmin
+
 - Cliquez sur Gérer pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :
 
 ![MySQL In App](Screenshots/MySQL1.png)
@@ -205,7 +211,7 @@ A cet instant précis, nous ne connaissons pas l'identifiant utilisateur et le m
 
 ![MySQL In App](Screenshots/phpMyAdmin1.png)
 
-La base de données créée par Azure se nomme azuredb commme le montre la figure ci-dessous :
+La base de données créée par Azure se nomme __azuredb__ commme le montre la figure ci-dessous :
 
 Les répertoire Sources de ce min-hack contient un fichier nommé get_mysql_connection.php et qui permet de récupérer l'identifiant utilisateur et le mot de passe.
 Copiez le fichier get_mysql_connection.php à la racine du projet d'application Symfony3 et déployer l'application comme cela à été vu dans la phase 3.

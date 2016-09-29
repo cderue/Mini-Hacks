@@ -149,20 +149,27 @@ Si vous n'avez jamais déployé d'application web Azure à partir d'un référen
 ### 3.4) Déployer une application Symfony sur Azure
 
 Maintenant que la source de déploiement est entièrement configurée, il est temps de déployer l'application PHP Symfony3 créée dans le paragraphe 3.2.
-Juste avant cela, intéressons nous aux deux fichiers nommés __web.config__ et __.deployment__ contenus dans le répertoire __Sources__ du mini-hack.
+Juste avant cela, intéressons nous aux 3 fichiers contenus dans le répertoire __Sources__ du mini-hack :
+- __web.config__
+- __.deployment__
+- __deploy.sh__
 
 *Le fichier web .config :*
 Ce fichier permet de définir les règles de réécriture des URL comme vous le feriez habituellement dans un fichier .htaccess. 
 Ces règles sont nécessaires pour que l'application se comporte correctement lors de la navigation.
 
-*Le fichier .deployment :*
+*Le fichier .deploiement :*
+Ce fichier permet de personnaliser le déploiement d'une application web sur Azure avec Azure App Service.
+Dans cet exemple, le fichier __.deployment__ contient une instruction de configuration pour que le fichier __deploy.sh__ soit exécuté lors du déploiement.
+
+*Le fichier deploy.sh :*
 Ce fichier écrit en shell permet de scripter le déploiement de l'application. Le nom du fichier est important pour que le déploiement fonctionne (n'oubliez paz le point devant le nom).
 Son utilisation n'est pas systématique lorsque l'on déploie des application web avec Azure App Service.
 Néanmoins, pour une application qui utilise le programme composer pour installer les dépendances du projet d'application, le fichier .deployment est obligatoire.
 Le fichier .deployment 
 
 Pour procéder au déploiement de l'application :
-- Copiez les fichiers __web.config__ et __.deployment__ à la racine du projet d'application Symfony
+- Copiez les fichiers __web.config__, __.deployment__ et __deploy.sh__ à la racine du projet d'application Symfony
 - Exécutez les commande suivantes depuis un terminal :
 
 ```bash

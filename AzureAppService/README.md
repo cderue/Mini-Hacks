@@ -133,7 +133,7 @@ pour configurer la souce de déploiement :
     
 ![Symfony](Screenshots/AzureWebAppDeployment1.png)
 
-*L'application web dispose désormais d'un URL de clonage Git accessible depuis la vue d'ensemble de l'application comme le montre la figure suivante :*
+*L'application web dispose désormais d'une URL de clonage Git accessible depuis la vue d'ensemble de l'application comme le montre la figure suivante :*
 
 ![Symfony](Screenshots/AzureWebAppDeployment3.png)
 

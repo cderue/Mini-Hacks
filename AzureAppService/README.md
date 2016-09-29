@@ -274,7 +274,15 @@ Les tâches créées sont désormais stockées dans la base de données MySQL.
 ### 4.1) Quelques mots sur Azure Functions
 
 Il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
-Pour ce faire, nous allons utiliser Azure Functions.
+Pour ce faire, nous allons utiliser conjointement Azure Functions et Sendgrid.
+
+## 4.2) Utiliser Sengrid pour l'envoi d'emails
+
+Sendgrid est un service qui permet d’envoyer des emails via des API. 
+Des SDK pour de nombreux langages comme C#, Ruby, NodeJS et PHP facilitent l'utilisation des API de Sendgrid.
+Sengrid est disponible depuis le Marketplace Azure et permet l'envoi de 25000 emails gratuits chaque mois.
+
+Nous allons maintenant créer un compte Sengrid depuis le Marketplace Azure :
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 

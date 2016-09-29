@@ -194,7 +194,7 @@ $ git push azure master
 *Le déploiement dure quelques minutes.*
 *Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.*
 
-![Symfony](Screenshots/SymfonyAzure.png)
+![Symfony](Screenshots/SymfonyAzure.PNG)
 
 ## 3) Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
 

@@ -215,42 +215,35 @@ Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azu
 - Désactivez le journal général MySQL (désactivé par défaut)
 - Cliquez sur Enregistrer pour enregistrer les paramètres MySQL In App
 
-### 3.4) Ouvrir phpMyAdmin
+### 3.3) Ouvrir phpMyAdmin
 
 - Cliquez sur Gérer pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :
 
 ![MySQL In App](Screenshots/MySQL1.png)
 
-Le navigateur affiche la page de connexion à phpMyAdmin et demande à  commme le montre la figure ci-dessous :
-A cet instant précis, nous ne connaissons pas l'identifiant utilisateur et le mot de passe générés par Azure pour se connecter à 
-
-
-- Dans la page de connexion de phpMyAdmin, saisissez le nom d'utilisateur et le mot de passe
+Dans le formulaire de connexion à phpMyAdmin :
+- Saisissez __azure__ comme identifiant utilisateur
+- Saisissez __password__ comme mot de passe
+- Cliquez sur __Login__
 
 ![MySQL In App](Screenshots/phpMyAdmin1.png)
 
 La base de données créée par Azure se nomme __azuredb__ commme le montre la figure ci-dessous :
 
+![MySQL In App](Screenshots/phpMyAdmin2.png)
 
-
-![MySQL In App](Screenshots/phpMyAdmin1.png)
-
-### Configurer la connexion à MySQL dans une application Symfony
+### 3.4) Configurer la connexion à MySQL dans une application Symfony
 
 ```bash
 # app/config/parameters.yml
 parameters:
-    database_host:      <>
+    database_host:      127.0.0.1
     database_name:      azuredb
-    database_user:      root
+    database_user:      azure
     database_password:  password
 
 # ... 
 ```
-
-Modifiez le fichier __get_mysql_connection.php__ avec  la racine du projet d'application Symfony3 et déployer de nouveau l'application.
-Une fois le déploiement terminé, vous pouvez commencer à utiliser la fonctionnalité de gestion des tâches de l'application. 
-Les tâches créées sont désormais stockées dans la base de données MySQL.
 
 ## 4) Générer une notification de déploiement avec Azure Functions
 

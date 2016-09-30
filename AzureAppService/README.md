@@ -261,6 +261,8 @@ parameters:
 
 Il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
 Pour ce faire, nous allons utiliser conjointement Azure Functions et Sendgrid.
+La création de fonctions Azure est possible depuis [un portail dédié à Azure Functions] (https://functions.azure.com/signin) ou depuis le portail Azure.
+Dans ce mini hack, nous utiliserons le portail Azure Functions. 
 
 ## 4.2) Utiliser Sengrid pour l'envoi d'emails
 
@@ -276,7 +278,7 @@ Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 
 Pour créer un nouveau service :
 
-- Connectez-vous à l'adresse au portail [Azure Functions](https://functions.azure.com/signin) à l'aide de votre compte Azure (https://functions.azure.com/signin)
+- Connectez-vous à l'adresse au portail [Azure Functions](https://functions.azure.com/signin) à l'aide de votre compte Azure ()
 - Dans la zone de saisie __Name__, nommez la nouvelle fonction
 - Dans la zone de sélection __Region__, choisissez la localisation __West Europe__ pour la nouvelle fonction.
 - Cliquez sur __Create + get started__

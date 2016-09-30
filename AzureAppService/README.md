@@ -215,23 +215,6 @@ Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azu
 - Désactivez le journal général MySQL (désactivé par défaut)
 - Cliquez sur Enregistrer pour enregistrer les paramètres MySQL In App
 
-### 3.2) Obtenir l'identifiant utilisateur et le mot de passe MySQL In App
-
-Le répertoire Sources de ce min-hack contient un fichier nommé __get_mysql_connection.php__ et qui permet de récupérer l'identifiant utilisateur et le mot de passe.
-
-- Copiez le fichier __get_mysql_connection.php__ à la racine du projet d'application Symfony3
-- Déployer l'application en exécutant les commandes suivantes depuis un terminal :
-
-```bash
-$ git add get_mysql_connection.php
-$ git commit -m "Déploiement du fichier get_mysql_connection.php" 
-$ git push azure master
-```
-
-- Une fois le déploiement terminé, accédez à l'URL du fichier depuis un navigateur pour afficher l'identifiant utilisateur et le mot de passe.
-
-
-
 ### 3.4) Ouvrir phpMyAdmin
 
 - Cliquez sur Gérer pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :

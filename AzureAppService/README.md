@@ -272,6 +272,15 @@ Nous allons maintenant créer un compte Sengrid depuis le Marketplace Azure :
 
 Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 
+## 4.3) Créer un nouveau service avec Azure Functions
+
+Pour créer un nouveau service :
+
+- Connectez-vous à l'adresse au portail [Azure Functions](https://functions.azure.com/signin) à l'aide de votre compte Azure (https://functions.azure.com/signin)
+- Dans la zone de saisie __Name__, nommez la nouvelle fonction
+- Dans la zone de sélection __Region__, choisissez la localisation __West Europe__ pour la nouvelle fonction.
+- Cliquez sur __Create + get started__
+
 ## Pour aller plus loin
 
 Ces parties sont optionnelles dans le cadre du mini-hack, mais voici quelques idées pour aller plus loin :

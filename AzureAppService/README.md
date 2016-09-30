@@ -232,6 +232,16 @@ La base de données créée par Azure se nomme __azuredb__ commme le montre la f
 
 ![MySQL In App](Screenshots/phpMyAdmin2.png)
 
+Le répertoire __Sources__ du mini-hack contient un script SQL nommé __script.sql__. 
+Ce script contient une requête de création de table et une requête d'insertion dans cette table.
+
+Nous allons maintenant exécuter le contenu de ce fichier dans phpMyAdmin :
+- Ouvrez le fichier dans l'éditeur de code de votre choix
+- Copiez le contenu du fichier dans l'onglet SQL de phpMyAdmin
+- Cliquez sur Go pour lancer l'exécution de la requête
+
+![MySQL In App](Screenshots/phpMyAdmin3.png)
+
 ### 3.4) Configurer la connexion à MySQL dans une application Symfony
 
 ```bash

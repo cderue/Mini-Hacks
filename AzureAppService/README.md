@@ -306,11 +306,13 @@ Pour initialiser un nouveau service avec Azure Functions :
 ```javascript
 module.exports = function(context, req) {
     var apiKey = "<Insérer la clé d'API SendGrid>";
+    var mailFrom = "noreply@azurefunctions.com";
     var mailTo = "<Insérer votre email>";
     var helper = require('sendgrid').mail;
     var from_email = new helper.Email(mailTo);
     var to_email = new helper.Email(mailTo);
-    var subject = 'Hello World from the SendGrid Node.js Library!';
+    var subject = "Azure deployment";
+    var message = body.message;
     var content = new helper.Content('text/plain', 'Hello, Email!');
     var mail = new helper.Mail(from_email, subject, to_email, content);
 
@@ -360,7 +362,7 @@ $ cd home\wwwroot
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-   "sendgrid": "^1.9.2"
+   "sendgrid": "^4.3.1"
   }
 }
 ```
@@ -377,7 +379,15 @@ $ npm install
 
 ## 4.5) Créer un webhook vers le service d'envoi d'email
 
-Pour accéder à la console Kudu,
+Pour appeler notre fonction Azure après chaque déploiement de l'application Symfony sur Azure, il es nécessaire de créer un Web Hook.
+Pour faire nous allons nous connecter à la console Kudu de l'application web Azure créée dans la section 2 :
+- Connectez-vous à l'adresse https://minihacksymfony.scm.azurewebsites.net/DebugConsole
+- Dans le menu principal, cliquez sur __Tools > Web hooks__
+- Dans le champ de saisie __Subscriber URL__, copiez-collez l'URL de la fonction Azure d'envoi d'emails
+- Sélectionnez __Post Deployment__
+- Cliquez sur __Add URL__ pour valider l'ajout du web hook
+
+*Une nouvelle URL apparaît maintenant dans la liste des web hooks.*
 
 ![Azure Functions](Screenshots/KuduWebhook.png)
 
@@ -391,7 +401,7 @@ Pour cela nous allons modifier le code source de l'application Symfony créée e
 
 ```html
 <div id="welcome">
-    <h1><span>Welcome to</span> Symfony on Azure {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+    <h1><span>Welcome to</span> Symfony on <span style="color:#00BCF2">Azure</span> {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
 </div>
 ```
 
@@ -409,6 +419,8 @@ Le déploiement prend quelques secondes. Une fois celui-ci terminé, nous devons
 
 - La réception d'un email indiquant le fin du déploiement de l'application
 
+![Symfony](Screenshots/KuduWebhook2.png)
+
 - L'affichage du titre "Welcome to Symfony on Azure" après rafraichissement de l'application web Azure dans le navigateur
 
 ![Symfony](Screenshots/SymfonyAzureFinal.png)
@@ -418,4 +430,8 @@ C'est terminé ! Pensez à valider votre mini-hack, il y a des cadeaux à gagner
 ## Pour aller plus loin
 
 Ces parties sont optionnelles dans le cadre du mini-hack, mais voici quelques idées pour aller plus loin :
+
+- [Ajouter une base de données MySQL avec MySQL In App](MySQL in-app/README.md)
+- [Personnaliser le déploiement d'une application web Azure avec Kudu](https://azure.microsoft.com/en-us/documentation/videos/custom-web-site-deployment-scripts-with-kudu/)
+
 

@@ -1,7 +1,7 @@
 # Bot Framework Mini-Hack
 Le café étant une boisson très importante pour tout développeur, dans ce mini-hack vous utiliserez Bot Framework pour coder un bot permettant de commander un café.
 
-Le but est d’utiliser rapidement Azure et de jouer avec Bot Framework pour déployer votre bot sur le cloud et l’invoquer dans des applications tierces.
+Le but est de jouer avec Bot Framework et d’utiliser rapidement Azure pour déployer votre bot sur le cloud et l’invoquer dans des applications tierces.
 
 Le tutoriel ci-dessous vous guidera pour construire un bot simple et le déployer, n’hésitez pas à laisser libre cours à votre imagination pour l’enrichir !
 

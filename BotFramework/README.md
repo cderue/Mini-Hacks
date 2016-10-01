@@ -96,7 +96,7 @@ De même qu'une application mobile a besoin d'être enregistrée, vous devez enr
 5. A l'issue de cela, votre identifiant d'application a été généré. Cliquez sur **Générer un mot de passe pour continuer** : 
 ![registerStep2](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/registerbot_step1bis.PNG)
 
-6. La plateforme web affiche votre mot de passe. **Attention : ce sera la seule fois où il sera disponible, copiez-collez le dans un endroit sûr et noteez également votre Microsoft App Id !**
+6. La plateforme web affiche votre mot de passe. **Attention : ce sera la seule fois où il sera visible en clair, copiez-collez le dans un endroit sûr et noteez également votre Microsoft App Id !**
 7. Cliquez ensuite sur **Terminez et revenir à Bot Framework** : 
 ![registerStep3](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/registerbot_step1ter.PNG)
 

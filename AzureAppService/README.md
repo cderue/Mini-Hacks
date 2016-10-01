@@ -217,16 +217,16 @@ Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir 
 - Dans la zone de recherche __Rechercher dans le marketplace__, saisissez __SendGrid__
 - Tapez sur le touche __Entrée__ de votre clavier pour lancer la recherche
 
-![SenGrid](SendGrid1.png)
+![SendGrid](Screenshots/SendGrid1.png)
 
 *Le Marketplace Azure trouve "SendGrid Email Delivery" dans les résultats de la recherche.*
 
-![SenGrid](SendGrid2.png)
+![SendGrid](Screenshots/SendGrid2.png)
 
 - Cliquez sur __SendGrid Email Delivery__ dans les résultats de la recherche
 - Dans la section __SendGrid Email Delivery__, cliquez sur __Créer__
 
-![SenGrid](SendGrid3.png)
+![SendGrid](Screenshots/SendGrid3.png)
 
 - Renseignez les informations nécessaires pour la création du compte SendGrid :
     - Dans la zone de saisie __Name__, saisissez un nom de compte
@@ -236,22 +236,22 @@ Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir 
     - Dans la zone __Groupe de ressources__, créez un nouveau groupe de ressources ou sélectionnez un groupe de ressources existant
     - Cliquez sur __Princing tiers__ puis sélectionnez l'offre __F1 Free__ et cliquez sur __Sélectionner__ pour valider le pricing
     
-![SenGrid](SendGrid4.png)
+![SendGrid](Screenshots/SendGrid4.png)
 
     - Cliquez sur __Contact Information__ et remplissez le formulaire de contact 
     
-![SenGrid](SendGrid5.png)
+![SendGrid](Screenshots/SendGrid5.png)
 
     - Cliquez sur __Termes et conditions__  et cliquez sur __Acheter__
 
-![SenGrid](SendGrid6.png)
+![SendGrid](Screenshots/SendGrid6.png)
 
     - Cochez la case __Epingler au tableau de bord__
     - Cliquez sur __Créer__ pour lancer la création du compte SendGrid
     
 *Après quelques instants, le compte SendGrid est prêt et les informations générales du compte s'affiche dans le portail Azure.*
 
-![SenGrid](SendGrid7.png)
+![SendGrid](Screenshots/SendGrid7.png)
 
 Nous allons maintenant nous connecter au portail SendGrid pour créer une clé d'API que nous utiliserons par la suite avec Azure Functions pour envoyer des emails.
 - Cliquez sur __Manage__
@@ -261,20 +261,20 @@ Nous allons maintenant nous connecter au portail SendGrid pour créer une clé d
 - Dans le panneau gauche du portail SenGrid, cliquez sur __Settings > API Keys__
 - En haut à droite du portail, cliquez sur __Create API Key__ puis sur __General API Key__
 
-![SenGrid](SendGrid11.png)
+![SendGrid](Screenshots/SendGrid11.png)
 
 - Dans le formulaire de création d'une nouvelle API :
     - Saisissez un nom pour la nouvelle clé
     - Paramétrez les droits en sélectionnant __FULL ACCESS__ pour les sections __Mail Send__ et __Template Engine__
     - Cliquez sur __Save__ pour sauvegarder la nouvelle clé d'API
     
-![SenGrid](SendGrid9.png)
+![SendGrid](Screenshots/SendGrid9.png)
 
-*SenGrid crée alors une nouvelle clé d'API et affiche la valeur de la clé.*
+*SendGrid crée alors une nouvelle clé d'API et affiche la valeur de la clé.*
 
 - Copiez la valeur de la clé d'API et collez-là dans un fichier texte
 
-![SenGrid](SendGrid10.png)
+![SendGrid](Screenshots/SendGrid10.png)
 
 ## 4.3) Créer un service d'envoi d'email avec Azure Functions
 

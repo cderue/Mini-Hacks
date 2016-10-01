@@ -1,12 +1,12 @@
 # Microsoft Azure App Service
 Pour ce mini-hack, je vous propose d'utiliser Microsoft Azure App Service pour déployer une application PHP Symfony3.
-Ce tutoriel se déroule en 5 phases :
+De plus, vous verrez comment utiliser Azure Functions pour générer un notification de déploiement.
+Ce tutoriel se déroule en 4 phases :
 
 1. La vérification des prérequis nécessaires
 2. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
 3. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
-4. L'ajout d'une base de données MySQL à une application web Azure avec [Azure App Service MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/)
-5. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
+4. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
 
 ## 1) Prérequis
 - L'un des éditeurs de code avancé suivant : 
@@ -32,31 +32,31 @@ Azure App Service est un service de plateforme ou Paas (Platform as a Service) q
 
 Pour créer une nouvelle application web depuis le [portail Azure](https://portal.azure.com) :
 
-- Cliquez sur Nouveau > Web + mobile > Application web
+- Cliquez sur __Nouveau > Web + mobile > Application web__
 
 ![Portail Azure App Service](Screenshots/AzureWebApp1.png)
 
 - Complétez ensuite les premières informations nécessaires :
-    - Nom de l'application : à vous de choisir
-    - Abonnement Azure (dans le cas où vous auriez plusieurs abonnements Azure)
-    - Groupe de ressources : un nouveau groupe de ressource pour le mini-hack sera parfait
+    - Saisissez le nom de l'application : à vous de choisir (attention de ne pas prendre un nom déjà pris)
+    - Sélectionnez l'abonnement Azure (dans le cas où vous auriez plusieurs abonnements Azure)
+    - Sélectionnez l'option __Nouveau__ pour le groupe de ressources et saisissez un nom pour ce groupe de ressources (attention de ne pas prendre un nom déjà pris)
         
 ![Portail Azure App Service](Screenshots/AzureWebApp3.png)       
 
 - Créez un [plan Azure App Service](https://azure.microsoft.com/fr-fr/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) pour l'application web :
-    - Cliquez sur [+] Créer nouveau
-    - Saisissez le nom du plan App Service
+    - Cliquez sur [+] __Créer nouveau__
+    - Saisissez un nom pour le nouveau plan App Service (attention de ne pas prendre un nom déjà pris)
     - Sélectionnez un emplacement : pour ce mini-hack, sélectionnez l'Europe occidentale (West Europe)
-    - Cliquez sur Niveau de tarification puis cliquez sur Afficher tout pour afficher davantage d'options de tarification, telles que Gratuit et Partagé
-    - Sélectionnez le niveau de tarification F1 (gratuit) pour le service  puis cliquez sur Sélectionner
-    - Valider l'ensemble en cliquant sur OK
+    - Cliquez sur __Niveau de tarification__ puis cliquez sur __Afficher tout__ pour afficher davantage d'options de tarification, telles que __Gratuit__ et __Partagé__
+    - Sélectionnez le niveau de tarification __F1 (gratuit)__ pour le service  puis cliquez sur __Sélectionner__
+    - Valider l'ensemble en cliquant sur __OK__
 
 ![Portail Azure App Service](Screenshots/AzureWebApp4.png)        
  
 - Renseignez enfin les dernières informations nécessaires :
-    - App Insights : laisser désactivé cette fonctionnalité qui n'est pas dans le périmètre de ce mini-hack
+    - App Insights : laisser désactivée cette fonctionnalité qui n'est pas dans le périmètre de ce mini-hack
     - Epingler au tableau de bord : conseillé pour accéder plus facilement à votre service
-    - Cliquez sur le bouton Créer pour lancer la création de l'appplication web
+    - Cliquez sur le bouton __Créer__ pour lancer la création de l'appplication web
      
 ![Portail Azure App Service](Screenshots/AzureWebApp5.png)
 
@@ -73,11 +73,11 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 ### 2.3) Configurer la version de PHP
 
 Azure App Service permet de paramétrer la version de PHP utilisée pour l'exécution d'une application PHP.
-Nous allons maintenant paramétrer l'application web Azure pour qu'elle utilise la PHP en version 7.
+Nous allons maintenant paramétrer l'application web Azure pour qu'elle utilise PHP en version 7.
 
-- Dans la section Paramètres, cliquez sur Paramètres de l'application
+- Dans la section __Paramètres__ de l'application web, cliquez sur __Paramètres de l'application__
 - Sélectionnez la version 7 de PHP
-- Cliquez sur Enregistrer pour valider les modifications
+- Cliquez sur __Enregistrer__ pour valider les modifications
 
 ![Portail Azure App Service](Screenshots/PHP7.png)   
 
@@ -85,7 +85,7 @@ Nous allons maintenant paramétrer l'application web Azure pour qu'elle utilise 
 
 ### 3.1) Quelques mots sur Symfony3
 
-Symfony3 est la dernière version du framework Symfony de SensioLabs. 
+Symfony3 est la dernière version courante du framework Symfony de SensioLabs. 
 Ce framework permet de créer des applications PHP allant du simple blog aux grandes applications critiques d'entreprise.
 Symfony permet de programmer avec une approche orientée composant en permettant ainsi au développeur d'utiliser toute ou partie du framework dans la construction d'une application.
 
@@ -121,11 +121,11 @@ $ symfony new <my_project_name>
 $ php symfony new <my_project_name>
 ```
 
-*Après quelques secondes, la nouvelle application Symfony est prête pour être exécutée en local comme le montre la figure suivante :*
+*Après quelques secondes, la nouvelle application Symfony est prête pour être exécutée en local.*
+
+- Pour lancer l'exécution de l'application, suivez les instructions indiquées dans le terminal (ignorez la configuration du fichier parameters.yml) :
 
 ![Symfony](Screenshots/Symfony1.png)
-
-Pour ce faire, suivez les instructions indiquées dans le terminal comme le montre la figure ci-dessous (ignorez la configuration du fichier parameters.yml) :
 
 *Le navigateur affiche alors la page montrée dans la figure ci-dessous :*
 
@@ -133,14 +133,14 @@ Pour ce faire, suivez les instructions indiquées dans le terminal comme le mont
 
 ### 3.3) Configurer le déploiement d'une application web sur Azure
 
-Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans le paragraphe 2.2. 
-pour configurer la souce de déploiement :
+Pour déployer une application web sur Azure, il faut au préalable retourner sur l'application web Azure créée dans la section 2. 
+Pour configurer la souce de déploiement :
 - Rendez-vous sur le [portail Azure](http://portal.azure.com)
 - Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
-- Dans la section Déploiement des applications, cliquez sur Options de déploiement
-- Cliquez sur Choisir la source
-- Sélectionnez Référentiel Git local
-- Cliquez sur OK pour valider le choix de la source de déploiement
+- Dans la section __Déploiement des applications__ de l'application web, cliquez sur __Options de déploiement__
+- Cliquez sur __Choisir la source__
+- Sélectionnez __Référentiel Git local__
+- Cliquez sur __OK__ pour valider le choix de la source de déploiement
     
 ![Symfony](Screenshots/AzureWebAppDeployment1.png)
 
@@ -149,39 +149,38 @@ pour configurer la souce de déploiement :
 ![Symfony](Screenshots/AzureWebAppDeployment3.png)
 
 Si vous n'avez jamais déployé d'application web Azure à partir d'un référentiel Git local, il est nécessaire de renseigner les informations d'identification du référentiel Git local :
-    - Dans la section Déploiement des applications, cliquez sur Informations d'identification de déploiement
+    - Dans la section __Déploiement des applications__ de l'application web, cliquez sur __Informations d'identification de déploiement__
     - Saisissez un nom d'utilisateur
     - Saisissez un mot de passe
     - Confirmez le mot de passe
-    - Cliquez sur Enregister pour valider les informations d'identification
+    - Cliquez sur __Enregister__ pour valider les informations d'identification
         
 ![Symfony](Screenshots/AzureWebAppDeployment2.png)
 
 ### 3.4) Déployer une application Symfony sur Azure
 
-Maintenant que la source de déploiement est entièrement configurée, il est temps de déployer l'application PHP Symfony3 créée dans le paragraphe 3.2.
+Maintenant que la source de déploiement est entièrement configurée, il est temps de déployer l'application PHP Symfony3 créée dans la section 3.
 Juste avant cela, intéressons nous aux 3 fichiers contenus dans le répertoire __Sources__ du mini-hack :
 - __web.config__
 - __.deployment__
 - __deploy.sh__
 
 *Le fichier web .config :*
-Ce fichier permet de définir les règles de réécriture des URL comme vous le feriez habituellement dans un fichier .htaccess. 
+Ce fichier permet de définir les règles de réécriture des URL comme vous le feriez habituellement dans un fichier __.htaccess__. 
 Ces règles sont nécessaires pour que l'application se comporte correctement lors de la navigation.
 
-*Le fichier .deploiement :*
+*Le fichier .deployment :*
 Ce fichier permet de personnaliser le déploiement d'une application web sur Azure avec Azure App Service.
 Dans cet exemple, le fichier __.deployment__ contient une instruction de configuration pour que le fichier __deploy.sh__ soit exécuté lors du déploiement.
 
 *Le fichier deploy.sh :*
 Ce fichier écrit en shell permet de scripter le déploiement de l'application. Le nom du fichier est important pour que le déploiement fonctionne (n'oubliez paz le point devant le nom).
 Son utilisation n'est pas systématique lorsque l'on déploie des application web avec Azure App Service.
-Néanmoins, pour une application qui utilise le programme composer pour installer les dépendances du projet d'application, le fichier .deployment est obligatoire.
-Le fichier .deployment 
+Néanmoins, pour une application PHP qui utilise le programme __composer__ pour installer les dépendances du projet d'application, le fichier __.deployment__ est obligatoire.
 
 Pour procéder au déploiement de l'application :
 - Copiez les fichiers __web.config__, __.deployment__ et __deploy.sh__ à la racine du projet d'application Symfony
-- Exécutez les commande suivantes depuis un terminal :
+- Exécutez les commandes suivantes depuis un terminal :
 
 ```bash
 $ git init
@@ -196,69 +195,15 @@ $ git push azure master
 
 ![Symfony](Screenshots/SymfonyAzure.PNG)
 
-## 3) Ajouter une base de données MySQL dans une application web avec Azure App Service MySQL in-app
+## 3) Générer une notification de déploiement avec Azure Functions
 
-### 3.1) Quelques mots sur MySQL In App
-
-MySQL in-app est une nouvelle fonctionnalité (en preview pour l'instant) conçue por permettre l'exécution d'une base de données MySQL sur une instance Azure App Service.
-Cette fonctionnalité permet au développeur qui a besoin d'une base de données clé en main de gagner du temps.
-MySQL in-app n'est pas prévu pour être utilisé en production.
-
-### 3.2) Activer MySQL In App
-
-Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azure :
-- Rendez-vous sur le [portail Azure](http://portal.azure.com)
-- Cliquez sur l'application web (épinglée normalement sur le tableau de bord du portail)
-- Cliquez sur MySQL in-app(Preview)
-- Activez MySQL In App
-- Désactivez le journal des requêtes lentes MySQL (désactivé par défaut)
-- Désactivez le journal général MySQL (désactivé par défaut)
-- Cliquez sur Enregistrer pour enregistrer les paramètres MySQL In App
-
-### 3.3) Ouvrir phpMyAdmin
-
-- Cliquez sur Gérer pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :
-
-![MySQL In App](Screenshots/MySQL1.png)
-
-Dans le formulaire de connexion à phpMyAdmin :
-- Saisissez __azure__ comme identifiant utilisateur
-- Saisissez __password__ comme mot de passe
-- Cliquez sur __Login__
-
-![MySQL In App](Screenshots/phpMyAdmin1.png)
-
-La base de données créée par Azure se nomme __azuredb__ commme le montre la figure ci-dessous :
-
-![MySQL In App](Screenshots/phpMyAdmin2.png)
-
-Le répertoire __Sources__ du mini-hack contient un script SQL nommé __script.sql__. 
-Ce script contient une requête de création de table et une requête d'insertion dans cette table.
-
-Nous allons maintenant exécuter le contenu de ce fichier dans phpMyAdmin :
-- Ouvrez le fichier dans l'éditeur de code de votre choix
-- Copiez le contenu du fichier dans l'onglet SQL de phpMyAdmin
-- Cliquez sur Go pour lancer l'exécution de la requête
-
-![MySQL In App](Screenshots/phpMyAdmin3.png)
-
-### 3.4) Configurer la connexion à MySQL dans une application Symfony
-
-```bash
-# app/config/parameters.yml
-parameters:
-    database_host:      127.0.0.1
-    database_name:      azuredb
-    database_user:      azure
-    database_password:  password
-
-# ... 
-```
-
-## 4) Générer une notification de déploiement avec Azure Functions
-
-### 4.1) Quelques mots sur Azure Functions
-
+### 3.1) Quelques mots sur Azure Functions
+Cette technologie est dite « event-driven » et « serverless ».
+Nous n’aurons pas à nous occuper ni même à décider de l’infrastructure sur laquelle s’exécute le code.
+Nous pouvons choisir parmi une multitude de langages pour son implémentation.
+Nous ne serons facturés qu’à l’utilisation, c’est-à-dire lorsqu’il y aura du traitement effectif.
+Cela nous évite de créer un site web qui devra être constamment « up and running », alors que nous n’en avons besoin qu’à des moments précis.
+Le code source sera facilement disponible et éditable en ligne, si nécessaire.
 Il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
 Pour ce faire, nous allons utiliser conjointement Azure Functions et Sendgrid.
 La création de fonctions Azure est possible depuis [un portail dédié à Azure Functions] (https://functions.azure.com/signin) ou depuis le portail Azure.
@@ -272,16 +217,144 @@ Sengrid est disponible depuis le Marketplace Azure et permet l'envoi de 25000 em
 
 Nous allons maintenant créer un compte Sengrid depuis le Marketplace Azure :
 
-Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 
-## 4.3) Créer un nouveau service avec Azure Functions
+## 4.3) Créer un service d'envoi d'email avec Azure Functions
 
-Pour créer un nouveau service :
+Pour créer un nouveau service avec Azure Functions :
 
-- Connectez-vous à l'adresse au portail [Azure Functions](https://functions.azure.com/signin) à l'aide de votre compte Azure ()
-- Dans la zone de saisie __Name__, nommez la nouvelle fonction
-- Dans la zone de sélection __Region__, choisissez la localisation __West Europe__ pour la nouvelle fonction.
+- Connectez-vous à l'adresse au portail Azure Functions à l'adresse https://functions.azure.com/signin
+- Dans la zone de saisie __Name, indiquez le nom la nouvelle fonction ou laissez le nom proposé par défaut
+- Dans la zone de sélection __Region__, choisissez la localisation __West Europe__
 - Cliquez sur __Create + get started__
+
+![Azure Functions](Screenshots/AzureFunctions1.png)
+
+*L'initialisation de la nouvelle fonction prend quelques secondes.
+Puis, une redirection vers le potail Azure se produit afin de demander à l'utilisateur les infos complémentaires pour terminer la création de la fonction.*
+
+- Cliquez sur WebHook + API
+- Sélectionnez JavaScript comme langage de la nouvelle fonction
+- Cliquez sur Create this fonction
+
+![Azure Functions](Screenshots/AzureFunctions2.png)
+
+*Azure Functions génére une fonction Node.js prédéfinie.*
+
+![Azure Functions](Screenshots/AzureFunctions3.png)
+
+- Effacez le code généré par défaut et remplacez-le par le code ci-dessous : 
+
+
+
+## 4.3) Créer un compte SendGrid et une clé d'API
+
+Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir envoyer des emails depuis notre fonction Azure.
+
+- Connectez-vous au portail Azure
+- Cliquez sur __Nouveau__
+- Dans la zone de recherche __Rechercher dans le marketplace__, saisissez __SendGrid__
+- Tapez sur le touche __Entrée__ de votre clavier pour lancer la recherche
+
+![SenGrid](SendGrid1.png)
+
+*Le Marketplace Azure trouve "SendGrid Email Delivery" dans les résultats de la recherche.*
+
+![SenGrid](SendGrid2.png)
+
+- Cliquez sur __SendGrid Email Delivery__ dans les résultats de la recherche
+- Dans la section __SendGrid Email Delivery__, cliquez sur __Créer__
+
+![SenGrid](SendGrid3.png)
+
+# Implémenter le code de la fonction Azure
+
+```javascript
+module.exports = function(context, req) {
+    var apiKey = "<Insérer la clé d'API SendGrid>";
+    var mailTo = "<Insérer votre email>";
+    var helper = require('sendgrid').mail;
+    var from_email = new helper.Email(mailTo);
+    var to_email = new helper.Email(mailTo);
+    var subject = 'Hello World from the SendGrid Node.js Library!';
+    var content = new helper.Content('text/plain', 'Hello, Email!');
+    var mail = new helper.Mail(from_email, subject, to_email, content);
+
+    var sg = require('sendgrid')(apiKey);
+      var request = sg.emptyRequest({
+        method: 'POST',
+        path: '/v3/mail/send',
+        body: mail.toJSON(),
+    });
+
+  sg.API(request, function(error, response) {
+    console.log(response.statusCode);
+    console.log(response.body);
+    console.log(response.headers);
+  });
+     
+    context.done();
+};
+```
+
+## 4.3) Ajouter un webhook vers le service d'envoi d'email à Kudu
+
+Pour accéder à la console Kudu,
+
+## 4.4) Installer SendGrid 
+
+- Ajoutez l'extrait de code suivant au fichier __package.json__
+
+```json
+{
+  "dependencies": {
+    "sendgrid": "^1.9.2"
+  }
+}
+```
+- Exécutez la commande suivante depuis un terminal :
+
+```bash
+$ npm install
+```
+
+*Un dossier "node_modules" est créé dans le dossier courant avec le package "sendgrid" à l’intérieur.*
+*Ce package sera utilisé depuis le code de notre fonction Azure.*
+
+![Azure Functions](Screenshots/KuduWebhook.png)
+
+## 4.3) Modifier le code source de l'application Symfony
+
+Nous sommes arrivés à l'ultime étape de ce mini-hack qui va nous permettre de tester si notre fonction Azure d'envoi d'emails fonctionne correctement.
+
+Pour cela nous allons modifier le code source de l'application Symfony créée en local dans la section 3) de ce mini-hack :
+- Editez le fichier le fichier __app/Resources/views/default/index.html.twig__
+- Modifiez le code source de la balise __div__ avec l'id "welcome" comme ci-dessous :
+
+```html
+<div id="welcome">
+    <h1><span>Welcome to</span> Symfony on Azure {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+</div>
+```
+
+*Cette modification du code va donc changer le titre "Welcome to Symfony" en "Welcome to Symfony on Azure" une fois l'application publiée sur Azure.**
+
+- Exécutez les commandes suivantes depuis un terminal :
+
+```bash
+$ git add app/Resources/views/default/index.html.twig
+$ git commit -m "Modification du titre" 
+$ git push azure master
+```
+
+Le déploiement prend quelques secondes. Une fois celui-ci terminé, nous devons observer le résultat suivant :
+
+- La réception d'un email indiquant le fin du déploiement de l'application
+
+- L'affichage du titre "Welcome to Symfony on Azure" après rafraichissement de l'application web Azure dans le navigateur
+
+![Symfony](Screenshots/SymfonyAzureFinal.png)
+
+C'est terminé ! Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 
 ## Pour aller plus loin
 

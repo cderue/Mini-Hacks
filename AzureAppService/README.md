@@ -195,9 +195,9 @@ $ git push azure master
 
 ![Symfony](Screenshots/SymfonyAzure.PNG)
 
-## 3) Générer une notification de déploiement avec Azure Functions
+## 4) Générer une notification de déploiement avec Azure Functions
 
-### 3.1) Quelques mots sur Azure Functions
+### 4.1) Quelques mots sur Azure Functions
 Azure Functions est une technologie dite "event-driven" et "serverless".
 Les fonctions Azure permet d'exécuter du code dans le cloud uniquement lorsque cela est nécessaire.
 Nous serons donc facturés seulement à l’utilisation, c’est-à-dire lorsqu’il y aura un traitement effectif.
@@ -206,14 +206,52 @@ Pour ce faire, nous allons utiliser conjointement Azure Functions et SendGrid.
 La création de fonctions Azure est possible depuis [un portail dédié à Azure Functions] (https://functions.azure.com/signin) ou depuis le portail Azure.
 Dans ce mini hack, nous utiliserons le portail Azure Functions. 
 
-## 4.2) Utiliser Sengrid pour l'envoi d'emails
+## 4.3) Créer un compte SendGrid et une clé d'API
 
 Sendgrid est un service qui permet d’envoyer des emails via des API. 
-Des SDK pour de nombreux langages comme C#, Ruby, NodeJS et PHP facilitent l'utilisation des API de Sendgrid.
+Des SDK pour de nombreux langages comme C#, Ruby, NodeJS et PHP facilitent l'utilisation des API de SendGrid.
 Sengrid est disponible depuis le Marketplace Azure et permet l'envoi de 25000 emails gratuits chaque mois.
+Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir envoyer des emails depuis notre fonction Azure :
+- Connectez-vous au portail Azure
+- Cliquez sur __Nouveau__
+- Dans la zone de recherche __Rechercher dans le marketplace__, saisissez __SendGrid__
+- Tapez sur le touche __Entrée__ de votre clavier pour lancer la recherche
 
-Nous allons maintenant créer un compte Sengrid depuis le Marketplace Azure :
+![SenGrid](SendGrid1.png)
 
+*Le Marketplace Azure trouve "SendGrid Email Delivery" dans les résultats de la recherche.*
+
+![SenGrid](SendGrid2.png)
+
+- Cliquez sur __SendGrid Email Delivery__ dans les résultats de la recherche
+- Dans la section __SendGrid Email Delivery__, cliquez sur __Créer__
+
+![SenGrid](SendGrid3.png)
+
+- Renseignez les informations nécessaires pour la création du compte SendGrid :
+    - Dans la zone de saisie __Name__, saisissez un nom de compte
+    - Dans la zone de saisie __Password, saisissez un mot de passe
+    - Dans la zone de saisie __Confirm Password, confirmez le mot de passe
+    - Dans la zone de sélection __Abonnement__, sélectionnez l'abonnement Azure (dans le cas où vous possédez plusieurs comptes Azure)
+    - Dans la zone __Groupe de ressources__, créez un nouveau groupe de ressources ou sélectionnez un groupe de ressources existant
+    - Cliquez sur __Princing tiers__ puis sélectionnez l'offre __F1 Free__ et cliquez sur __Sélectionner__ pour valider le pricing
+    
+![SenGrid](SendGrid4.png)
+
+    - Cliquez sur __Contact Information__ et remplissez le formulaire de contact 
+    
+![SenGrid](SendGrid5.png)
+
+    - Cliquez sur __Termes et conditions__  et cliquez sur __Acheter__
+
+![SenGrid](SendGrid6.png)
+
+    - Cochez la case __Epingler au tableau de bord__
+    - Cliquez sur __Créer__ pour lancer la création du compte SendGrid
+    
+*Après quelques instants, le compte SendGrid est prêt et les informations générales du compte s'affiche dans le portail Azure.*
+
+![SenGrid](SendGrid7.png)
 
 ## 4.3) Créer un service d'envoi d'email avec Azure Functions
 
@@ -243,25 +281,7 @@ Puis, une redirection vers le potail Azure se produit afin de demander à l'util
 
 
 
-## 4.3) Créer un compte SendGrid et une clé d'API
 
-Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir envoyer des emails depuis notre fonction Azure.
-
-- Connectez-vous au portail Azure
-- Cliquez sur __Nouveau__
-- Dans la zone de recherche __Rechercher dans le marketplace__, saisissez __SendGrid__
-- Tapez sur le touche __Entrée__ de votre clavier pour lancer la recherche
-
-![SenGrid](SendGrid1.png)
-
-*Le Marketplace Azure trouve "SendGrid Email Delivery" dans les résultats de la recherche.*
-
-![SenGrid](SendGrid2.png)
-
-- Cliquez sur __SendGrid Email Delivery__ dans les résultats de la recherche
-- Dans la section __SendGrid Email Delivery__, cliquez sur __Créer__
-
-![SenGrid](SendGrid3.png)
 
 # Implémenter le code de la fonction Azure
 

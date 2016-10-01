@@ -198,14 +198,11 @@ $ git push azure master
 ## 3) Générer une notification de déploiement avec Azure Functions
 
 ### 3.1) Quelques mots sur Azure Functions
-Cette technologie est dite « event-driven » et « serverless ».
-Nous n’aurons pas à nous occuper ni même à décider de l’infrastructure sur laquelle s’exécute le code.
-Nous pouvons choisir parmi une multitude de langages pour son implémentation.
-Nous ne serons facturés qu’à l’utilisation, c’est-à-dire lorsqu’il y aura du traitement effectif.
-Cela nous évite de créer un site web qui devra être constamment « up and running », alors que nous n’en avons besoin qu’à des moments précis.
-Le code source sera facilement disponible et éditable en ligne, si nécessaire.
-Il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
-Pour ce faire, nous allons utiliser conjointement Azure Functions et Sendgrid.
+Azure Functions est une technologie dite "event-driven" et "serverless".
+Les fonctions Azure permet d'exécuter du code dans le cloud uniquement lorsque cela est nécessaire.
+Nous serons donc facturés seulement à l’utilisation, c’est-à-dire lorsqu’il y aura un traitement effectif.
+Dans ce mini-hack, il s'agit de mettre en place un service capable d'envoyer un mail de notification lorsque le déploiement de l'application est terminée.
+Pour ce faire, nous allons utiliser conjointement Azure Functions et SendGrid.
 La création de fonctions Azure est possible depuis [un portail dédié à Azure Functions] (https://functions.azure.com/signin) ou depuis le portail Azure.
 Dans ce mini hack, nous utiliserons le portail Azure Functions. 
 

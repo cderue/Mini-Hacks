@@ -268,7 +268,7 @@ Nous allons maintenant nous connecter au portail SendGrid pour créer une clé d
     - Paramétrez les droits en sélectionnant __FULL ACCESS__ pour les sections __Mail Send__ et __Template Engine__
     - Cliquez sur __Save__ pour sauvegarder la nouvelle clé d'API
     
-![SendGrid](Screenshots/sendgrid9.png)
+![SendGrid](Screenshots/sendgrid9.PNG)
 
 *SendGrid crée alors une nouvelle clé d'API et affiche la valeur de la clé.*
 

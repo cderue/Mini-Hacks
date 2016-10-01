@@ -312,8 +312,8 @@ module.exports = function(context, req) {
     var from_email = new helper.Email(mailTo);
     var to_email = new helper.Email(mailTo);
     var subject = "Azure deployment";
-    var message = body.message;
-    var content = new helper.Content('text/plain', 'Hello, Email!');
+    var message = body.status;
+    var content = new helper.Content('text/plain', message);
     var mail = new helper.Mail(from_email, subject, to_email, content);
 
     var sg = require('sendgrid')(apiKey);

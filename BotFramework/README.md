@@ -6,6 +6,9 @@ Le but est d’utiliser rapidement Azure et de jouer avec Bot Framework pour dé
 Le tutoriel ci-dessous vous guidera pour construire un bot simple et le déployer, n’hésitez pas à laisser libre cours à votre imagination pour l’enrichier !
 
 ## Prérequis
+
+Pour ce challenge vous aurez besoin de : 
+
 *	Visual Studio 2015 à jour
 *	Microsoft Bot Framework Channel Emulator, téléchargeable ici : https://download.botframework.com/bf-v3/tools/emulator/publish.htm
 
@@ -14,8 +17,10 @@ Pour bien commencer, il faut s'assurer que la solution de départ se lance corre
 Pour cela :
 
 1.  Ouvrez la solution **MiniHack.BotApplication.sln**
-2.  Démarrez le projet
-3.  Une page de votre navigateur internet s’ouvre, notez le port indiqué dans l’url : 
+2.  Exécuter le projet
+3.  Une page de votre navigateur internet s’ouvre, notez le **port** indiqué dans l’url : 
+
+![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/localhosturl.PNG)
 
 4.	Lancer Microsoft Bot Framework Channel Emulator (si vous ne l’avez pas installé, téléchargez le **[ici](https://download.botframework.com/bf-v3/tools/emulator/publish.htm)** et installez le)
 
@@ -24,6 +29,8 @@ Pour cela :
 7.	Dans la zone de texte située en bas de l’émulateur, tapez **hello**
 8.	Votre **hello** s’affiche dans la zone **chat** 
 9.  Le bot répond en vous souhaitant la bienvenue, demande votre nom et affiche le message **Processed your order !** : 
+
+![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/debugresult.PNG)
 
 Nous allons compléter le code pour construire le scénario souhaité.
 

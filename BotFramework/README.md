@@ -19,11 +19,8 @@ Pour cela :
 1.  Ouvrez la solution **MiniHack.BotApplication.sln**
 2.  Exécuter le projet
 3.  Une page de votre navigateur internet s’ouvre, notez le **port** indiqué dans l’url : 
-
 ![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/localhosturl.PNG)
-
-4.	Lancer Microsoft Bot Framework Channel Emulator (si vous ne l’avez pas installé, téléchargez le **[ici](https://download.botframework.com/bf-v3/tools/emulator/publish.htm)** et installez le)
-
+4.  Lancer Microsoft Bot Framework Channel Emulator (si vous ne l’avez pas installé, téléchargez le **[ici](https://download.botframework.com/bf-v3/tools/emulator/publish.htm)** et installez le)
 5.	Dans le champs **« Bot Url »** reportez le port que vous avez noté à l’étape 3
 6.	Ne modifiez pas les autres champs
 7.	Dans la zone de texte située en bas de l’émulateur, tapez **hello**

@@ -206,7 +206,7 @@ Pour ce faire, nous allons utiliser conjointement Azure Functions et SendGrid.
 La création de fonctions Azure est possible depuis [un portail dédié à Azure Functions] (https://functions.azure.com/signin) ou depuis le portail Azure.
 Dans ce mini hack, nous utiliserons le portail Azure Functions. 
 
-## 4.3) Créer un compte SendGrid et une clé d'API
+## 4.2) Créer un compte SendGrid et une clé d'API
 
 Sendgrid est un service qui permet d’envoyer des emails via des API. 
 Des SDK pour de nombreux langages comme C#, Ruby, NodeJS et PHP facilitent l'utilisation des API de SendGrid.
@@ -253,9 +253,32 @@ Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir 
 
 ![SenGrid](SendGrid7.png)
 
+Nous allons maintenant nous connecter au portail SendGrid pour créer une clé d'API que nous utiliserons par la suite avec Azure Functions pour envoyer des emails.
+- Cliquez sur __Manage__
+
+*Le portail Azure nous redirige vers le portail SendGrid.*
+
+- Dans le panneau gauche du portail SenGrid, cliquez sur __Settings > API Keys__
+- En haut à droite du portail, cliquez sur __Create API Key__ puis sur __General API Key__
+
+![SenGrid](SendGrid11.png)
+
+- Dans le formulaire de création d'une nouvelle API :
+    - Saisissez un nom pour la nouvelle clé
+    - Paramétrez les droits en sélectionnant __FULL ACCESS__ pour les sections __Mail Send__ et __Template Engine__
+    - Cliquez sur __Save__ pour sauvegarder la nouvelle clé d'API
+    
+![SenGrid](SendGrid9.png)
+
+*SenGrid crée alors une nouvelle clé d'API et affiche la valeur de la clé.*
+
+- Copiez la valeur de la clé d'API et collez-là dans un fichier texte
+
+![SenGrid](SendGrid10.png)
+
 ## 4.3) Créer un service d'envoi d'email avec Azure Functions
 
-Pour créer un nouveau service avec Azure Functions :
+Pour initialiser un nouveau service avec Azure Functions :
 
 - Connectez-vous à l'adresse au portail Azure Functions à l'adresse https://functions.azure.com/signin
 - Dans la zone de saisie __Name, indiquez le nom la nouvelle fonction ou laissez le nom proposé par défaut
@@ -264,12 +287,13 @@ Pour créer un nouveau service avec Azure Functions :
 
 ![Azure Functions](Screenshots/AzureFunctions1.png)
 
-*L'initialisation de la nouvelle fonction prend quelques secondes.
-Puis, une redirection vers le potail Azure se produit afin de demander à l'utilisateur les infos complémentaires pour terminer la création de la fonction.*
+*L'initialisation de la nouvelle fonction prend quelques secondes.*
+*Puis, une redirection vers le portail Azure se produit afin de demander à l'utilisateur les infos complémentaires pour terminer la création de la fonction.*
 
-- Cliquez sur WebHook + API
-- Sélectionnez JavaScript comme langage de la nouvelle fonction
-- Cliquez sur Create this fonction
+- Renseignez les informations nécessaires pour déterminer le type de fonction et le langage à utiliser :  
+    - Cliquez sur __WebHook + API__
+    - Sélectionnez __JavaScript__ comme langage de la nouvelle fonction
+    - Cliquez sur __Créer cette fonction__
 
 ![Azure Functions](Screenshots/AzureFunctions2.png)
 
@@ -278,12 +302,6 @@ Puis, une redirection vers le potail Azure se produit afin de demander à l'util
 ![Azure Functions](Screenshots/AzureFunctions3.png)
 
 - Effacez le code généré par défaut et remplacez-le par le code ci-dessous : 
-
-
-
-
-
-# Implémenter le code de la fonction Azure
 
 ```javascript
 module.exports = function(context, req) {
@@ -313,22 +331,42 @@ module.exports = function(context, req) {
 };
 ```
 
-## 4.3) Ajouter un webhook vers le service d'envoi d'email à Kudu
-
-Pour accéder à la console Kudu,
-
 ## 4.4) Installer SendGrid 
 
+Pour que le code de notre fonction Azure puisse s'exécuter correctement, il faut installer le package NPM SendGrid.
+
+Connectez-vous à l'adresse https://minihackmailfunction.scm.azurewebsites.net/DebugConsole
+
+*Le navigateur affiche la console Kudu.*
+
+- Dans la console affichée dans la page, exécutez la commande suivante pour naviguer jusqu'à la racine de l'application Azure Functions :
+
+```bash
+$ cd home\wwwroot
+```
+
+- Dans la zone d'arborescence des fichiers, cliquez sur le bouton [+] pour créer un nouveau fichier
+- Nommez ce fichier __package.json__
+
+![Azure Functions](Screenshots/AzureFunctions7.png)
+
+- Cliquez sur l'icône "Crayon" du fichier __package.json__
 - Ajoutez l'extrait de code suivant au fichier __package.json__
+- Cliquez sur __Save__ pour sauvegarder les modifications 
 
 ```json
 {
+  "name": "azure-functions",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "sendgrid": "^1.9.2"
+   "sendgrid": "^1.9.2"
   }
 }
 ```
-- Exécutez la commande suivante depuis un terminal :
+![Azure Functions](Screenshots/AzureFunctions7.png)
+
+- Exécutez la commande suivante depuis la console Kudu (vérifiez que vous êtes bien dans le répertoire __site\wwwroot__) :
 
 ```bash
 $ npm install
@@ -336,6 +374,10 @@ $ npm install
 
 *Un dossier "node_modules" est créé dans le dossier courant avec le package "sendgrid" à l’intérieur.*
 *Ce package sera utilisé depuis le code de notre fonction Azure.*
+
+## 4.5) Créer un webhook vers le service d'envoi d'email
+
+Pour accéder à la console Kudu,
 
 ![Azure Functions](Screenshots/KuduWebhook.png)
 

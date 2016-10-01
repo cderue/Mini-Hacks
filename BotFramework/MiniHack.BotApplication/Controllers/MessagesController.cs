@@ -47,7 +47,7 @@ namespace MiniHack.BotApplication
 
         internal static IDialog<CoffeeOrder> MakeRootDialog()
         {
-            return Chain.From(() => FormDialog.FromForm(CoffeeOrder.BuildLocalizedForm))
+            return Chain.From(() => FormDialog.FromForm(CoffeeOrder.BuildForm))
             .Do(async (context, order) =>
                {
                    try
@@ -74,32 +74,7 @@ namespace MiniHack.BotApplication
 
         }
 
-        internal static IDialog<JObject> MakeJsonRootDialog()
-        {
-            return Chain.From(() => FormDialog.FromForm(CoffeeOrder.BuildJsonForm))
-                .Do(async (context, order) =>
-                {
-                    try
-                    {
-                        var completed = await order;
-                        // Actually process the coffee order...
-                        await context.PostAsync("Processed your order!");
-                    }
-                    catch (FormCanceledException<JObject> e)
-                    {
-                        string reply;
-                        if (e.InnerException == null)
-                        {
-                            reply = $"You quit on {e.Last}--maybe you can finish next time!";
-                        }
-                        else
-                        {
-                            reply = "Sorry, I've had a short circuit.  Please try again.";
-                        }
-                        await context.PostAsync(reply);
-                    }
-                });
-        }
+
 
         private Activity HandleSystemMessage(Activity message)
         {

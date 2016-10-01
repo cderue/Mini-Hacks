@@ -106,3 +106,12 @@ C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramewo
 C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\obj\Debug\fr\MiniHack.BotApplication.resources.dll
 C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\obj\Debug\MiniHack.BotApplication.dll
 C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\obj\Debug\MiniHack.BotApplication.pdb
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\Microsoft.WindowsAzure.Mobile.dll
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\Microsoft.WindowsAzure.Mobile.Ext.dll
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\System.Net.Http.Extensions.dll
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\System.Net.Http.Primitives.dll
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\Microsoft.WindowsAzure.Mobile.xml
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\Microsoft.WindowsAzure.Mobile.Ext.xml
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\System.Net.Http.Extensions.xml
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\bin\System.Net.Http.Primitives.xml
+C:\Users\edwige.seminara\Source\Workspaces\MyGitRepository\Mini-Hacks\BotFramework\MiniHack.BotApplication\obj\Debug\MiniHack.BotApplication.csproj.App.config

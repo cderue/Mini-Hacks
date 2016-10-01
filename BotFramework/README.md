@@ -60,23 +60,24 @@ Maintenant que notre bot fonctionne correctement en local, nous allons le déplo
 1. Faites un clic droit sur le projet
 2. Cliquez sur **Publish**
 3. Sélectionnez **Microsoft Azure App Services** : 
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step1.PNG)
+![publishStep1](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step1.png)
 
 4. Il faut ensuite créer votre service d'application. Cliquer sur le bouton **New** à droite de la fenêtre : 
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step2.PNG)
+![publishStep2](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step2.PNG)
 
 5. Créez votre service d'application en remplissant les informations demandées. Veillez à bien choisir la zone **WestEurope** : 
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step3.PNG)
+![publishStep3](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step3.PNG)
 
 6. Une fois que votre service d'application a été créé cliquez sur **Create** pour obtenir la fenêtre suivante :
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step4.PNG)
+![publishStep3](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step4.PNG)
 
 7. Cette fenêtre récapitule toutes les informations de connexion à votre service azure, cliquez sur **validate connection** pour véfifier le bon établissement de la connexion. Cliquez sur **Next**
 8. Veillez à ce que la configuration **Release** soit bien sélectionnée pour le déploiement, puis cliquez sur **Next** : 
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step5.PNG)
+![publishStep4](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step5.PNG)
 
 9. Cliquer sur **Publish** : 
-![localhostimage](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step6.PNG)
+
+![publishStep5](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/publishbot_step6.PNG)
 
 Félicitations votre Bot est sur le cloud ! Il nous reste une toute petite étape pour finir...
 

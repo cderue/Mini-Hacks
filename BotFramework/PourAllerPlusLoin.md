@@ -75,3 +75,10 @@ Vous en voulez encore ? Voici d'autres idées pour aller encore plus loin :
 * Développer une gestion des prix plus aboutie et plus dynamique (en se basant sur la présence de suppléments par exemple)
 
 ## Laissez libre cours à votre imagination !
+
+
+## Documentations
+
+* **[Bot framework documentation](https://docs.botframework.com/en-us/)**
+* **[Bot Builder for .NET](https://download.botframework.com/bf-v3/tools/emulator/publish.htm)**
+* **[Bot Framework resources](https://docs.botframework.com/en-us/tools/bot-framework-emulator/#navtitle)**

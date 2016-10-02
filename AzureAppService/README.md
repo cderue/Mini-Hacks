@@ -1,12 +1,10 @@
 # Microsoft Azure App Service
 Pour ce mini-hack, je vous propose d'utiliser Microsoft Azure App Service pour déployer une application PHP Symfony3.
-De plus, vous verrez comment utiliser Azure Functions pour générer un notification de déploiement.
-Ce tutoriel se déroule en 4 phases :
+Ce tutoriel se déroule en 3 phases :
 
 1. La vérification des prérequis nécessaires
 2. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
 3. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
-4. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
 
 ## 1) Prérequis
 - L'un des éditeurs de code avancé suivant : 
@@ -37,15 +35,15 @@ Pour créer une nouvelle application web depuis le [portail Azure](https://porta
 ![Portail Azure App Service](Screenshots/AzureWebApp1.png)
 
 - Complétez ensuite les premières informations nécessaires :
-    - Saisissez le nom de l'application : à vous de choisir (attention de ne pas prendre un nom déjà pris)
+    - Saisissez le nom de l'application : à vous de choisir (attention de ne pas choisir un nom déjà pris)
     - Sélectionnez l'abonnement Azure (dans le cas où vous auriez plusieurs abonnements Azure)
-    - Sélectionnez l'option __Nouveau__ pour le groupe de ressources et saisissez un nom pour ce groupe de ressources (attention de ne pas prendre un nom déjà pris)
+    - Sélectionnez l'option __Nouveau__ pour le groupe de ressources et saisissez un nom pour ce groupe de ressources (attention de ne pas choisir un nom déjà pris)
         
 ![Portail Azure App Service](Screenshots/AzureWebApp3.png)       
 
 - Créez un [plan Azure App Service](https://azure.microsoft.com/fr-fr/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) pour l'application web :
     - Cliquez sur [+] __Créer nouveau__
-    - Saisissez un nom pour le nouveau plan App Service (attention de ne pas prendre un nom déjà pris)
+    - Saisissez un nom pour le nouveau plan App Service (attention de ne pas choisir un nom déjà pris)
     - Sélectionnez un emplacement : pour ce mini-hack, sélectionnez l'Europe occidentale (West Europe)
     - Cliquez sur __Niveau de tarification__ puis cliquez sur __Afficher tout__ pour afficher davantage d'options de tarification, telles que __Gratuit__ et __Partagé__
     - Sélectionnez le niveau de tarification __F1 (gratuit)__ pour le service  puis cliquez sur __Sélectionner__
@@ -153,7 +151,7 @@ Si vous n'avez jamais déployé d'application web Azure à partir d'un référen
     - Saisissez un nom d'utilisateur
     - Saisissez un mot de passe
     - Confirmez le mot de passe
-    - Cliquez sur __Enregister__ pour valider les informations d'identification
+    - Cliquez sur __Enregistrer__ pour valider les informations d'identification
         
 ![Symfony](Screenshots/AzureWebAppDeployment2.png)
 
@@ -184,7 +182,7 @@ Pour procéder au déploiement de l'application :
 
 ```bash
 $ git init
-$ git remote add azure <url_de_clonage_git_de>
+$ git remote add azure <url_de_clonage_git_de_l'application_web>
 $ git add .
 $ git commit -m "Déploiement de l'application PHP Symfony3" 
 $ git push azure master
@@ -194,8 +192,6 @@ $ git push azure master
 *Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.*
 
 ![Symfony](Screenshots/SymfonyAzure.PNG)
-
-
 
 C'est terminé ! Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 

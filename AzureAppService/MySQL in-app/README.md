@@ -26,7 +26,7 @@ Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azu
 Dans le formulaire de connexion à phpMyAdmin :
 - Saisissez __azure__ comme identifiant utilisateur
 - Saisissez __password__ comme mot de passe
-- Cliquez sur __Login__
+- Cliquez sur __Go__
 
 ![MySQL In App](../Screenshots/phpMyAdmin1.png)
 

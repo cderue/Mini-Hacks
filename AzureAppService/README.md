@@ -1,12 +1,10 @@
 # Microsoft Azure App Service
 Pour ce mini-hack, je vous propose d'utiliser Microsoft Azure App Service pour déployer une application PHP Symfony3.
-De plus, vous verrez comment utiliser Azure Functions pour générer un notification de déploiement.
-Ce tutoriel se déroule en 4 phases :
+Ce tutoriel se déroule en 3 phases :
 
 1. La vérification des prérequis nécessaires
 2. La création d'une application web Azure avec [Microsoft Azure App Service](https://azure.microsoft.com/fr-fr/services/app-service/)
 3. La création et le déploiement d'une application [Symfony3](https://symfony.com/) sur Microsoft Azure
-4. Le paramétrage d'une notification de déploiement avec [Microsoft Azure Functions](https://azure.microsoft.com/fr-fr/services/functions/)
 
 ## 1) Prérequis
 - L'un des éditeurs de code avancé suivant : 

@@ -1,5 +1,9 @@
 # Pour aller plus loin
 
+Félicitations ! Si vous êtes arrivés jusqu'ici c'est que vous avez terminé le challenge Bot Framework.
+
+Voici les étapes à suivre pour déployer votre bot dans le cloud et l'enregistrer.
+
 ## Déployez votre bot dans le cloud
 
 Maintenant que notre bot fonctionne correctement en local, nous allons le déployer sur le cloud. Pour suivez les étapes ci-dessous, il vous faut un abonnement Mcirosoft Azure. Si vous n'en possèdez pas, vous pouvez obtenir une version d'essai ici : azure.microsoft.com/en-us/

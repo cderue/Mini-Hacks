@@ -139,9 +139,9 @@
     <value>Do you want to order your {Temperature} {Size} {Coffee} </value>
   </data>
   <data name="ThankYou" xml:space="preserve">
-    <value>Thanks {Name} for ordering a drink at Stardust !</value>
+    <value>Thanks {Name} for ordering a drink !</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Welcome to Stardust !</value>
+    <value>Welcome to the coffee order bot !</value>
   </data>
 </root>

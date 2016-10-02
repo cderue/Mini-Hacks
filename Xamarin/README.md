@@ -136,7 +136,7 @@ Nous avons mis dans notre XAML des événements. *SearchButtonPressed* et *Refre
         private async void RefreshSearch(object sender, EventArgs e)
         {
             TweetsList.IsRefreshing = true;
-            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Text et les ajouter à UsersList.ItemsSource
+            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Text et les ajouter à TweetsList.ItemsSource
             TweetsList.IsRefreshing = false;
         }
 ```

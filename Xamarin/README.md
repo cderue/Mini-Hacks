@@ -75,9 +75,9 @@ Afin de simplifier cet exercice nous avons préparé cette DLL qui permet 3 type
 Vous pouvez alors utiliser :
 ```csharp
 // Récupérer les 30 derniers tweets avec le mot clé "Xamarin"
-List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsAsync("Xamarin", 30, ResultType.Recent);
+var Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsAsync("Xamarin", 30, ResultType.Recent);
 // Récupérer les 10 derniers tweets de l'utilisateur @Cellenza
-List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserAsync("Cellenza", 10);
+var Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserAsync("Cellenza", 10);
 ...
 ```
 **Attention** : il y a des limitations en nombre d'appels. Nous vous invitons à vous en référer aux documentations ci-dessous et à ne pas lancer 3000 appels par seconde.

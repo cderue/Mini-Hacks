@@ -184,7 +184,7 @@ Pour procéder au déploiement de l'application :
 
 ```bash
 $ git init
-$ git remote add azure <url_de_clonage_git_de>
+$ git remote add azure <url_de_clonage_git_de_l'application_web>
 $ git add .
 $ git commit -m "Déploiement de l'application PHP Symfony3" 
 $ git push azure master
@@ -194,8 +194,6 @@ $ git push azure master
 *Une fois le déploiement terminé, lancez de nouveau l'application web Azure dans un navigateur pour observer le résultat.*
 
 ![Symfony](Screenshots/SymfonyAzure.PNG)
-
-
 
 C'est terminé ! Pensez à valider votre mini-hack, il y a des cadeaux à gagner !
 

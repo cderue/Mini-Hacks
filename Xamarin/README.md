@@ -20,8 +20,12 @@ Pour cela :
 3. Démarrez le projet
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154306.png)
+![Twitter apps](/Xamarin/README_FILES/OutputSelectIOS.png)
+![Twitter apps](/Xamarin/README_FILES/OutputSelectDroid.png)
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154348.png)
+
+![Twitter apps](/Xamarin/README_FILES/Start.png)
 
 ## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :
@@ -75,9 +79,9 @@ Afin de simplifier cet exercice nous avons préparé cette DLL qui permet 3 type
 Vous pouvez alors utiliser :
 ```csharp
 // Récupérer les 30 derniers tweets avec le mot clé "Xamarin"
-List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsAsync("Xamarin", 30, ResultType.Recent);
+var Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsAsync("Xamarin", 30, ResultType.Recent);
 // Récupérer les 10 derniers tweets de l'utilisateur @Cellenza
-List<Status> Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserAsync("Cellenza", 10);
+var Statuses = await TwitterAPI.TwitterApi.Instance.SearchTweetsOfUserAsync("Cellenza", 10);
 ...
 ```
 **Attention** : il y a des limitations en nombre d'appels. Nous vous invitons à vous en référer aux documentations ci-dessous et à ne pas lancer 3000 appels par seconde.
@@ -136,7 +140,7 @@ Nous avons mis dans notre XAML des événements. *SearchButtonPressed* et *Refre
         private async void RefreshSearch(object sender, EventArgs e)
         {
             TweetsList.IsRefreshing = true;
-            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Text et les ajouter à UsersList.ItemsSource
+            // TODO : Récupérer la liste des tweets correspondant au TweetsSearchBar.Text et les ajouter à TweetsList.ItemsSource
             TweetsList.IsRefreshing = false;
         }
 ```
@@ -175,7 +179,13 @@ Idem dans votre **MainPage.xaml.cs** :
         }
 ```
 
-Pour la suite :
+## Résultat attendu
+
+![Twitter apps](/Xamarin/README_FILES/FinishTweets.png)
+
+![Twitter apps](/Xamarin/README_FILES/FinishUsers.png)
+
+### Pour aller plus loin :
 
 - Customisez votre application à fond !
  - Icone d'application

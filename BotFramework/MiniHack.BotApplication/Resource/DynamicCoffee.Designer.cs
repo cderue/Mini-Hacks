@@ -124,7 +124,7 @@ namespace MiniHack.BotApplication.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thanks {Name} for ordering a drink at Stardust !.
+        ///   Looks up a localized string similar to Thanks {Name} for ordering a drink !.
         /// </summary>
         internal static string ThankYou {
             get {
@@ -133,7 +133,7 @@ namespace MiniHack.BotApplication.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to Stardust !.
+        ///   Looks up a localized string similar to Welcome to the coffee order bot !.
         /// </summary>
         internal static string Welcome {
             get {

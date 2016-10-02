@@ -139,9 +139,9 @@
     <value>Confirmez vous votre commande d'un {Temperature} {Size} {Coffee} </value>
   </data>
   <data name="ThankYou" xml:space="preserve">
-    <value>Merci {Name} d'avoir commandé votre boisson chez Stardust !</value>
+    <value>Merci {Name} d'avoir commandé votre boisson !</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Bienvenue chez Stardust !</value>
+    <value>Bienvenue sur le bot de commande de café !</value>
   </data>
 </root>

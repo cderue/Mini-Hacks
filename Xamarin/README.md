@@ -4,7 +4,7 @@ Dans ce mini-hack vous utiliserez l'API de Twitter pour rechercher et afficher d
 Le but est d'implémenter rapidement l'API Twitter et de jouer avec Xamarin.Forms pour les afficher sur toutes les plateformes.
 
 Le tutoriel ci-dessous vous guidera pour récupérer tweets et utilisateurs, mais après cette base posée vous êtes libre de laisser votre imagination s'envoler et d'afficher vos tweets différemment. 
-N'hésitez pas à tweeter [**@framinosona**](https://twitter.com/framinosona), [**@edwigeseminara**](https://twitter.com/edwigeseminara) ou [**@benjiiim**](https://twitter.com/benjiiim) pour tester vos clients twitter ;)
+N'hésitez pas à tweeter [**@framinosona**](https://twitter.com/framinosona), [**@edwigeseminara**](https://twitter.com/edwigeseminara), [**@cderue**](https://twitter.com/cderue) ou [**@benjiiim**](https://twitter.com/benjiiim) pour tester vos clients twitter ;)
 
 Pour ce challenge vous aurez besoin de soit :
 

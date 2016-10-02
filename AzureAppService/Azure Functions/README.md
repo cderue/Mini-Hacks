@@ -59,6 +59,8 @@ Nous allons maintenant créer un compte SendGrid et une clé d'API pour pouvoir 
 Nous allons maintenant nous connecter au portail SendGrid pour créer une clé d'API que nous utiliserons par la suite avec Azure Functions pour envoyer des emails.
 - Cliquez sur __Manage__
 
+![SendGrid](../Screenshots/sendgrid8.png)
+
 *Le portail Azure nous redirige vers le portail SendGrid.*
 
 - Dans le panneau gauche du portail SenGrid, cliquez sur __Settings > API Keys__
@@ -101,6 +103,12 @@ Pour initialiser un nouveau service avec Azure Functions :
 ![Azure Functions](../Screenshots/AzureFunctions2.png)
 
 *Azure Functions génére une fonction Node.js prédéfinie.*
+
+L'écran de visualisation de la fonction comporte les zones suivantes :
+- URL de la fonction : cette URL sera utilisée plus tard dans la création d'un web hook dans la console Kudu
+- Code : implémentation du code de la fonction Azure
+- Journaux : console d'affichage des traces d'exécution de la fonction lorsque que celle-ci est appelée
+- Exécuter : interface de test de la fonction
 
 ![Azure Functions](../Screenshots/AzureFunctions3.png)
 

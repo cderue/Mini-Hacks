@@ -68,7 +68,7 @@ public string Name { get; set; }
 * la génération du formulaire : 
 ```csharp 
 var builder = new FormBuilder<CoffeeOrder>()
-                        .Message(DynamicCoffee.WelcomeMessage)
+                        .Message(DynamicCoffee.Welcome)
                         .AddRemainingFields();
 ```
 
@@ -203,7 +203,7 @@ Modifions maintenant le formulaire pour aboutir à notre scénario !
 
 ### Modifier le formulaire
 
-Dans la méthode **BuildForm** de la classe **CoffeeOrder**, après la ligne **.Message(DynamicCoffee.WelcomeMessage)** : 
+Dans la méthode **BuildForm** de la classe **CoffeeOrder**, après la ligne **.Message(DynamicCoffee.Welcome)** : 
 
 * Demander le type de boisson à commander : 
 ```csharp

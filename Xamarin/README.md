@@ -25,8 +25,7 @@ Pour cela :
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154348.png)
 
-![Twitter apps](/Xamarin/README_FILES/StartDroid.png)
-![Twitter apps](/Xamarin/README_FILES/StartIOS.png)
+![Twitter apps](/Xamarin/README_FILES/Start.png)
 
 ## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :

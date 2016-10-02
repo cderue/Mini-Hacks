@@ -38,7 +38,7 @@ namespace MiniHack.BotApplication
                 };
 
                 var builder = new FormBuilder<CoffeeOrder>()
-                        .Message(DynamicCoffee.WelcomeMessage)
+                        .Message(DynamicCoffee.Welcome)
                         .AddRemainingFields();
 
                 builder.Configuration.DefaultPrompt.ChoiceStyle = ChoiceStyleOptions.Auto;

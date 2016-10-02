@@ -21,18 +21,18 @@ Pour activer la fonctionnalité MySQL In App au niveau d'une application web Azu
 
 - Cliquez sur __Gérer__ pour ouvrir phpMyAdmin commme le montre la figure ci-dessous :
 
-![MySQL In App](Screenshots/MySQL1.png)
+![MySQL In App](../Screenshots/MySQL1.png)
 
 Dans le formulaire de connexion à phpMyAdmin :
 - Saisissez __azure__ comme identifiant utilisateur
 - Saisissez __password__ comme mot de passe
 - Cliquez sur __Login__
 
-![MySQL In App](Screenshots/phpMyAdmin1.png)
+![MySQL In App](../Screenshots/phpMyAdmin1.png)
 
 La base de données créée par Azure se nomme __azuredb__ commme le montre la figure ci-dessous :
 
-![MySQL In App](Screenshots/phpMyAdmin2.png)
+![MySQL In App](../Screenshots/phpMyAdmin2.png)
 
 ## 4) Configurer la connexion à MySQL dans une application Symfony
 

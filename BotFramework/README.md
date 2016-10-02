@@ -297,6 +297,16 @@ Notez que la méthode **AddRemainingFields()** permet d'ajouter toutes les autre
 
 Compilez, éxécutez et testez le tout avec l'émulateur !
 
+Voici le résultat que vous devriez obtenir : 
+
+![resultat1](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/result_1.png)
+
+![resultat2](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/result_2.png)
+
+![resultat3](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/result_3.png)
+
+![resultat4](https://github.com/EdwigeSeminara/Mini-Hacks/blob/master/BotFramework/README_files/result_4.png)
+
 
 ## Félicitations vous avez terminé ce challenge !
 

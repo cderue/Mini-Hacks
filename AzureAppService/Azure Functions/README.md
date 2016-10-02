@@ -160,12 +160,11 @@ $ cd home\wwwroot
 
 - Dans la zone d'arborescence des fichiers, cliquez sur le bouton [+] pour créer un nouveau fichier
 - Nommez ce fichier __package.json__
+- Cliquez sur l'icône "Crayon" du fichier __package.json__
 
 ![Azure Functions](../Screenshots/AzureFunctions7.png)
 
-- Cliquez sur l'icône "Crayon" du fichier __package.json__
-- Ajoutez l'extrait de code suivant au fichier __package.json__
-- Cliquez sur __Save__ pour sauvegarder les modifications 
+- Ajoutez l'extrait de code ci-dessous au fichier __package.json__
 
 ```json
 {
@@ -177,7 +176,9 @@ $ cd home\wwwroot
   }
 }
 ```
-![Azure Functions](../Screenshots/AzureFunctions7.png)
+- Cliquez sur __Save__ pour sauvegarder les modifications 
+
+![Azure Functions](../Screenshots/AzureFunctions8.png)
 
 - Exécutez la commande suivante depuis la console Kudu (vérifiez que vous êtes bien dans le répertoire __site\wwwroot__) :
 
@@ -190,8 +191,8 @@ $ npm install
 
 ## 5) Créer un webhook vers le service d'envoi d'email
 
-Pour appeler notre fonction Azure après chaque déploiement de l'application Symfony sur Azure, il es nécessaire de créer un Web Hook.
-Pour faire nous allons nous connecter à la console Kudu de l'application web Azure créée dans la section 2 :
+Pour appeler notre fonction Azure après chaque déploiement de l'application Symfony sur Azure, il est nécessaire de créer un Web Hook.
+Pour faire nous allons nous connecter à la console Kudu de l'application web Azure créée dans ce mini-hack :
 - Connectez-vous à l'adresse https://minihacksymfony.scm.azurewebsites.net/DebugConsole
 - Dans le menu principal, cliquez sur __Tools > Web hooks__
 - Dans le champ de saisie __Subscriber URL__, copiez-collez l'URL de la fonction Azure d'envoi d'emails
@@ -206,7 +207,7 @@ Pour faire nous allons nous connecter à la console Kudu de l'application web Az
 
 Testons maintenant si notre fonction Azure d'envoi d'emails fonctionne correctement.
 
-Pour cela nous allons modifier le code source de l'application Symfony créée en local dans la section 3) de ce mini-hack :
+Pour cela nous allons modifier le code source de l'application Symfony créée dans ce mini-hack :
 - Editez le fichier le fichier __app/Resources/views/default/index.html.twig__
 - Modifiez le code source de la balise __div__ avec l'id "welcome" comme ci-dessous :
 
@@ -228,7 +229,7 @@ $ git push azure master
 
 Le déploiement prend quelques secondes. Une fois celui-ci terminé, nous devons observer le résultat suivant :
 
-- La réception d'un email indiquant le fin du déploiement de l'application
+- La réception d'un email indiquant la fin du déploiement de l'application
 
 ![Symfony](../Screenshots/KuduWebhook2.png)
 

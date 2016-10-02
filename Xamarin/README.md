@@ -175,7 +175,7 @@ Idem dans votre **MainPage.xaml.cs** :
         }
 ```
 
-Pour la suite :
+Pour aller plus loin :
 
 - Customisez votre application à fond !
  - Icone d'application

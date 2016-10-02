@@ -20,8 +20,13 @@ Pour cela :
 3. Démarrez le projet
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154306.png)
+![Twitter apps](/Xamarin/README_FILES/OutputSelectIOS.png)
+![Twitter apps](/Xamarin/README_FILES/OutputSelectDroid.png)
 
 ![Twitter apps](/Xamarin/README_FILES/snip_20160928154348.png)
+
+![Twitter apps](/Xamarin/README_FILES/StartDroid.png)
+![Twitter apps](/Xamarin/README_FILES/StartIOS.png)
 
 ## Créer une app Twitter et récupérer ses credentials OAuth
 Afin d'accéder aux APIs de Twitter il faut se procurer des identifiants auprès de Twitter :
@@ -175,7 +180,13 @@ Idem dans votre **MainPage.xaml.cs** :
         }
 ```
 
-Pour aller plus loin :
+## Résultat attendu
+
+![Twitter apps](/Xamarin/README_FILES/FinishTweets.png)
+
+![Twitter apps](/Xamarin/README_FILES/FinishUsers.png)
+
+### Pour aller plus loin :
 
 - Customisez votre application à fond !
  - Icone d'application

@@ -189,7 +189,7 @@ $ npm install
 *Un dossier "node_modules" est créé dans le dossier courant avec le package "sendgrid" à l’intérieur.*
 *Ce package sera utilisé depuis le code de notre fonction Azure.*
 
-## 5) Créer un webhook vers le service d'envoi d'email
+## 5) Créer un web hook vers le service d'envoi d'email
 
 Pour appeler notre fonction Azure après chaque déploiement de l'application Symfony sur Azure, il est nécessaire de créer un Web Hook.
 Pour faire nous allons nous connecter à la console Kudu de l'application web Azure créée dans ce mini-hack :
